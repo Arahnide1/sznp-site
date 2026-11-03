@@ -1,0 +1,93 @@
+/* СЗНП Сибирь — дизайн-токены */
+:root {
+  /* Бренд (брендбук, HEX исправлены) */
+  --blue: #004B87;
+  --red: #E30000;
+  --gray: #CCCCCC;
+  --black: #000000;
+  --white: #FFFFFF;
+  --bg-soft: #F5F5F5;
+
+  /* Производные оттенки фирменного синего */
+  --blue-700: #003D6E;
+  --blue-900: #002B4E;
+  --blue-100: #E6EEF5;
+  --blue-tint: #B9CDE0;
+
+  /* Текст */
+  --text: #111418;
+  --text-muted: #5B6470;
+  --text-on-blue: #FFFFFF;
+  --text-on-blue-muted: rgba(255, 255, 255, .72);
+
+  /* Шрифт — Tahoma (выбор клиента). Tahoma есть только в Regular и Bold */
+  --font: Tahoma, Verdana, "Segoe UI", Geneva, sans-serif;
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  /* Типографическая шкала (desktop 1920) */
+  --fs-hero: 68px;
+  --fs-h1: 56px;
+  --fs-h2: 44px;
+  --fs-h3: 24px;
+  --fs-lead: 21px;
+  --fs-body: 17px;
+  --fs-small: 15px;
+  --fs-xs: 13px;
+  --fs-menu: 18px;
+
+  --lh-tight: 1.12;
+  --lh-head: 1.2;
+  --lh-body: 1.55;
+
+  /* Сетка */
+  --container: 1440px;
+  --gutter: 40px;
+  --section-y: 120px;
+
+  /* Скругления */
+  --r-card: 16px;
+  --r-btn: 8px;
+  --r-pill: 999px;
+  --r-accent: 40px 0 40px 0;
+
+  /* Тени */
+  --shadow-header: 0 2px 12px rgba(0, 0, 0, .15);
+  --shadow-pop: 0 24px 60px rgba(0, 32, 64, .22);
+  --shadow-card: 0 8px 30px rgba(0, 40, 80, .08);
+
+  /* Шапка */
+  --h-mainbar: 88px;
+  --logo-h: 56px;
+
+  /* Движение */
+  --ease-out: cubic-bezier(.22, .61, .36, 1);
+  --dur-fast: 200ms;
+  --dur-reveal: 700ms;
+}
+
+@media (max-width: 1599px) {
+  :root {
+    --fs-hero: 60px;
+    --fs-h1: 50px;
+    --fs-h2: 40px;
+    --fs-menu: 17px;
+    --logo-h: 52px;
+    --section-y: 100px;
+  }
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --fs-hero: 40px;
+    --fs-h1: 36px;
+    --fs-h2: 30px;
+    --fs-h3: 20px;
+    --fs-lead: 18px;
+    --fs-body: 16px;
+    --gutter: 20px;
+    --section-y: 64px;
+    --h-mainbar: 72px;
+    --logo-h: 44px;
+  }
+}

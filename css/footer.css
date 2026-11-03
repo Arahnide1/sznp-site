@@ -1,0 +1,50 @@
+/* ===== Подвал ===== */
+.site-footer { background: var(--black); color: var(--text-on-blue); font-size: var(--fs-small); }
+.footer__main {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1.2fr 1.5fr;
+  gap: 48px;
+  padding-block: 88px 72px;
+}
+.footer__logo { height: 52px; width: auto; margin-bottom: 24px; }
+.footer__org { font-size: var(--fs-body); font-weight: var(--fw-bold); margin-bottom: 8px; }
+.footer__tagline { color: var(--text-on-blue-muted); max-width: 300px; line-height: 1.5; }
+
+.footer__title { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: .08em; color: var(--text-on-blue-muted); margin-bottom: 20px; font-weight: var(--fw-bold); }
+.footer__list { display: grid; gap: 14px; }
+.footer__list a { font-size: var(--fs-body); transition: color var(--dur-fast); }
+.footer__list a:hover { color: var(--white); opacity: .7; }
+
+.footer__phone { display: block; font-size: 24px; font-weight: var(--fw-bold); margin-bottom: 8px; }
+.footer__mail { display: inline-block; font-size: var(--fs-body); margin-bottom: 24px; }
+.footer__mail:hover, .footer__phone:hover { opacity: .75; }
+.footer__addr { display: grid; gap: 10px; color: var(--text-on-blue-muted); line-height: 1.5; margin-bottom: 24px; }
+.footer__addr b { color: var(--white); font-weight: var(--fw-bold); }
+
+/* Оригинальные знаки мессенджеров, монохром: белый знак в тёмном круге, при наведении — инверсия */
+.socials { display: flex; gap: 12px; }
+.socials a {
+  width: 48px; height: 48px; border-radius: var(--r-pill);
+  display: inline-flex; align-items: center; justify-content: center;
+  background: rgba(255, 255, 255, .12); color: var(--white);
+  transition: background-color var(--dur-fast), color var(--dur-fast), transform var(--dur-fast) var(--ease-out);
+}
+.socials a:hover { background: var(--white); color: var(--black); transform: translateY(-2px); }
+.socials svg { width: 24px; height: 24px; }
+
+.footer__bottom { background: rgba(255, 255, 255, .05); }
+.footer__bottom-in {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  min-height: 64px; color: var(--text-on-blue-muted);
+}
+.footer__legal { display: flex; gap: 32px; }
+.footer__legal a:hover { color: var(--white); }
+
+@media (max-width: 1199px) {
+  .footer__main { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 639px) {
+  .footer__main { grid-template-columns: 1fr; padding-block: 56px 40px; }
+  .footer__bottom-in { flex-direction: column; align-items: flex-start; padding-block: 20px; }
+  .footer__legal { flex-direction: column; gap: 10px; }
+}
