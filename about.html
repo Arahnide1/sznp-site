@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>О компании — СЗНП Сибирь</title>
+  <meta name="description" content="ООО «СЗНП Сибирь» — высокоточное производство и реверс-инжиниринг для горнодобывающей отрасли с 2022 года. Производственные площадки в Новосибирске и Норильске, вакансии, частые вопросы.">
+  <script>
+    (function (p, h) { if (p.has('static') || p.get('menu') === 'open') h.classList.add('is-static'); })(new URLSearchParams(location.search), document.documentElement);
+  </script>
+  <link rel="preload" as="image" href="img/photo/about-hero.jpg">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="mainbar">
+      <div class="container mainbar__in">
+        <a class="logo" href="index.html" aria-label="СЗНП Сибирь — на главную">
+          <img src="img/logo/sznp-white.png" alt="СЗНП Сибирь" width="250" height="56">
+        </a>
+
+        <nav class="nav" id="site-nav" aria-label="Основное меню">
+          <ul class="nav__list">
+            <li class="nav__item"><a class="nav__link" href="index.html" data-i18n="nav.home">Главная</a></li>
+            <li class="nav__item nav__item--drop">
+              <button class="nav__link nav__toggle is-current" type="button" aria-expanded="false" aria-controls="dd-about">
+                <span data-i18n="nav.about">О компании</span>
+                <svg class="nav__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="dropdown" id="dd-about">
+                <ul class="dropdown__list">
+                  <li><a class="dropdown__link" href="#factory"><span data-i18n="about.factory">О производстве</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+                  <li><a class="dropdown__link" href="#sites"><span data-i18n="about.sites">Производственные площадки</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+                  <li><a class="dropdown__link" href="#staff"><span data-i18n="about.staff">Сотрудники</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+                  <li><a class="dropdown__link" href="#jobs"><span data-i18n="about.jobs">Вакансии</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+                  <li><a class="dropdown__link" href="#faq"><span data-i18n="about.faq">Вопрос-ответ</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+                  <li><a class="dropdown__link" href="#contacts"><span data-i18n="about.contacts">Контакты</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+                </ul>
+                <a class="dropdown__promo" href="about.html" tabindex="-1">
+                  <img src="img/photo/cnc-hall-empty.jpg" alt="" loading="lazy">
+                  <p data-i18n="about.promo">Надёжный производственный партнёр в горнодобывающей и промышленной отраслях</p>
+                </a>
+              </div>
+            </li>
+            <li class="nav__item"><a class="nav__link" href="production.html" data-i18n="nav.production">Производство</a></li>
+            <li class="nav__item"><a class="nav__link" href="catalog.html" data-i18n="nav.catalog">Каталог</a></li>
+            <li class="nav__item"><a class="nav__link" href="#contacts" data-i18n="nav.contacts">Контакты</a></li>
+          </ul>
+        </nav>
+
+        <div class="mainbar__actions">
+          <a class="mainbar__phone" href="tel:+79139200371">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+            <span>+7 913 920-03-71</span>
+          </a>
+          <a class="btn btn--white header-cta" href="#contacts" data-i18n="header.cta">Отправить запрос</a>
+          <div class="lang" role="group" aria-label="Язык / Language">
+            <button class="lang__btn" type="button" data-lang="ru" aria-pressed="true">РУ</button>
+            <span class="lang__sep" aria-hidden="true">/</span>
+            <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+          </div>
+        </div>
+
+        <button class="burger" type="button" aria-expanded="false" aria-controls="site-nav" data-i18n-attr="aria-label:nav.menu" aria-label="Меню">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Первый экран -->
+    <section class="page-hero">
+      <img src="img/photo/about-hero.jpg" alt="Токарная обработка детали на станке с ЧПУ" width="1920" height="720" fetchpriority="high">
+      <div class="container page-hero__in">
+        <nav aria-label="Хлебные крошки">
+          <ol class="crumbs">
+            <li><a href="index.html" data-i18n="nav.home">Главная</a></li>
+            <li><span aria-current="page" data-i18n="nav.about">О компании</span></li>
+          </ol>
+        </nav>
+        <h1 class="page-hero__title" data-i18n="nav.about">О компании</h1>
+        <p class="page-hero__sub" data-i18n="ab.hero.sub">Надёжный производственный партнёр в горнодобывающей и промышленной отраслях: производство запчастей, инжиниринговые решения и комплексные поставки.</p>
+      </div>
+    </section>
+
+    <!-- О производстве -->
+    <section class="section" id="factory">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-head__title">
+            <span class="plate" data-reveal data-i18n="about.factory">О производстве</span>
+            <h2 class="h2" data-reveal data-i18n="ab.factory.title">Высокоточное производство и реверс-инжиниринг с 2022 года</h2>
+          </div>
+          <div class="sec-head__aside">
+            <div class="text" data-reveal>
+              <p data-i18n="ab.factory.p1">С 2022 года ООО «СЗНП Сибирь» специализируется на высокоточном производстве и реверс-инжиниринге оборудования для горнодобывающего сектора.</p>
+              <p data-i18n="ab.factory.p2">Изготавливаем гидроцилиндры, РВД, ремкомплекты и уплотнения, 100% аналоги деталей для импортной техники, торкрет-оборудование и карданные валы. Подбираем и поставляем запчасти для техники Sandvik, Epiroc, Normet и Caterpillar.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="a-stats" data-reveal-group>
+          <div class="a-stat" data-reveal><span class="a-stat__num">2022</span><span class="a-stat__label" data-i18n="ab.stat.1">год основания компании</span></div>
+          <div class="a-stat" data-reveal><span class="a-stat__num">100%</span><span class="a-stat__label" data-i18n="ab.stat.2">аналоги деталей и расходников для импортной техники</span></div>
+          <div class="a-stat" data-reveal><span class="a-stat__num">5</span><span class="a-stat__label" data-i18n="ab.stat.3">мировых брендов: Sandvik, Epiroc, Normet, Caterpillar, Aliva</span></div>
+          <div class="a-stat" data-reveal><span class="a-stat__num">3</span><span class="a-stat__label" data-i18n="ab.stat.4">группы материалов: полиуретан, резина, металл</span></div>
+        </div>
+
+        <div class="values" data-reveal-group>
+          <div class="value value--accent" data-reveal>
+            <h3 class="value__title" data-i18n="ab.val.1.title">Наша цель</h3>
+            <p class="value__text" data-i18n="ab.val.1.text">Качественное сервисное обслуживание и долгосрочные, надёжные партнёрские отношения.</p>
+          </div>
+          <div class="value" data-reveal>
+            <h3 class="value__title" data-i18n="ab.val.2.title">Импортозамещение</h3>
+            <p class="value__text" data-i18n="ab.val.2.text">Предлагаем доступные и надёжные альтернативы импортному оборудованию.</p>
+          </div>
+          <div class="value" data-reveal>
+            <h3 class="value__title" data-i18n="ab.val.3.title">Собственное производство</h3>
+            <p class="value__text" data-i18n="ab.val.3.text">Полный цикл: от снятия размеров и 3D-моделирования до готовой детали.</p>
+          </div>
+          <div class="value" data-reveal>
+            <h3 class="value__title" data-i18n="ab.val.4.title">Скорость и гибкость</h3>
+            <p class="value__text" data-i18n="ab.val.4.text">Оперативно решаем нестандартные задачи, индивидуально подходим к каждому заказу.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Производственные площадки -->
+    <section class="section section--soft" id="sites">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-head__title">
+            <span class="plate" data-reveal data-i18n="about.sites">Производственные площадки</span>
+            <h2 class="h2" data-reveal data-i18n="ab.sites.title">Собственная производственная база</h2>
+          </div>
+          <div class="sec-head__aside">
+            <p class="lead" data-reveal data-i18n="ab.sites.text">Собственная база — наше главное преимущество: контролируем качество на каждом этапе и гибко реагируем на потребности заказчика.</p>
+          </div>
+        </div>
+
+        <div class="base">
+          <div class="base__list" data-reveal-group>
+            <div class="base__lead" data-reveal>
+              <h3 data-i18n="ab.cycle.title">Полный цикл</h3>
+              <p data-i18n="ab.cycle.text">от снятия размеров и 3D-моделирования до готовой детали</p>
+            </div>
+            <div class="cap" data-reveal>
+              <span class="cap__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg></span>
+              <div><h4 data-i18n="ab.cap.1.title">Металлообработка</h4><p data-i18n="ab.cap.1.text">Токарно-фрезерные работы любой сложности на станках с ЧПУ</p></div>
+            </div>
+            <div class="cap" data-reveal>
+              <span class="cap__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4a2 2 0 0 0 1-1.7Z"/><path d="M3.3 7 12 12l8.7-5M12 22V12"/></svg></span>
+              <div><h4 data-i18n="ab.cap.2.title">Полиуретан и резина</h4><p data-i18n="ab.cap.2.text">Изделия из полиуретана и резины различных марок и назначения</p></div>
+            </div>
+            <div class="cap" data-reveal>
+              <span class="cap__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="9" width="12" height="6" rx="1"/><path d="M14 12h8M18 10v4M5 9V7M11 9V7"/></svg></span>
+              <div><h4 data-i18n="ab.cap.3.title">Гидравлика</h4><p data-i18n="ab.cap.3.text">Гидроцилиндры, РВД любых конфигураций, ремкомплекты и уплотнения</p></div>
+            </div>
+            <div class="cap" data-reveal>
+              <span class="cap__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h4M18 12h4M9 12h6"/><rect x="6" y="8" width="3" height="8" rx="1"/><rect x="15" y="8" width="3" height="8" rx="1"/></svg></span>
+              <div><h4 data-i18n="ab.cap.4.title">Карданные валы</h4><p data-i18n="ab.cap.4.text">Изготовление, ремонт и динамическая балансировка на компьютерном стенде</p></div>
+            </div>
+          </div>
+          <div class="photo base__photo" data-reveal-photo>
+            <img src="img/photo/about-site-machine.jpg" alt="Токарный обрабатывающий центр с ЧПУ" width="740" height="1120" loading="lazy">
+          </div>
+        </div>
+
+        <div class="sites" data-reveal-group>
+          <div class="site-card" data-reveal>
+            <span class="site-card__tag" data-i18n="ab.site.1.tag">Производство</span>
+            <h3 data-i18n="addr.nsk.city">Новосибирск</h3>
+            <p data-i18n="addr.nsk">ул. Дуси Ковальчук, 2/2, офис 33</p>
+          </div>
+          <div class="site-card" data-reveal>
+            <span class="site-card__tag" data-i18n="ab.site.2.tag">Площадка</span>
+            <h3 data-i18n="addr.nor.city">Норильск</h3>
+            <p data-i18n="addr.nor">Рудник Таймырский, гаражный кооператив «Октябрь»</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Сотрудники -->
+    <section class="section" id="staff">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-head__title">
+            <span class="plate" data-reveal data-i18n="about.staff">Сотрудники</span>
+            <h2 class="h2" data-reveal data-i18n="ab.staff.title">Команда производства и инжиниринга</h2>
+          </div>
+          <div class="sec-head__aside">
+            <p class="lead" data-reveal data-i18n="ab.staff.text">Снимаем размеры, строим 3D-модель и изготавливаем деталь своими силами — по чертежам, эскизам или образцам заказчика.</p>
+          </div>
+        </div>
+        <!-- Фото и имена — заглушки, ждём от заказчика -->
+        <div class="staff" data-reveal-group>
+          <div class="person" data-reveal>
+            <div class="person__photo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4.5"/><path d="M3 22a9 9 0 0 1 18 0Z"/></svg></div>
+            <h3 class="person__name" data-i18n="ab.person.name">Фамилия Имя</h3>
+            <p class="person__role" data-i18n="ab.person.1">Генеральный директор</p>
+          </div>
+          <div class="person" data-reveal>
+            <div class="person__photo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4.5"/><path d="M3 22a9 9 0 0 1 18 0Z"/></svg></div>
+            <h3 class="person__name" data-i18n="ab.person.name">Фамилия Имя</h3>
+            <p class="person__role" data-i18n="ab.person.2">Главный инженер</p>
+          </div>
+          <div class="person" data-reveal>
+            <div class="person__photo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4.5"/><path d="M3 22a9 9 0 0 1 18 0Z"/></svg></div>
+            <h3 class="person__name" data-i18n="ab.person.name">Фамилия Имя</h3>
+            <p class="person__role" data-i18n="ab.person.3">Начальник производства</p>
+          </div>
+          <div class="person" data-reveal>
+            <div class="person__photo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4.5"/><path d="M3 22a9 9 0 0 1 18 0Z"/></svg></div>
+            <h3 class="person__name" data-i18n="ab.person.name">Фамилия Имя</h3>
+            <p class="person__role" data-i18n="ab.person.4">Руководитель отдела продаж</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Вакансии -->
+    <section class="section section--blue" id="jobs">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-head__title">
+            <span class="plate" data-reveal data-i18n="about.jobs">Вакансии</span>
+            <h2 class="h2" data-reveal data-i18n="ab.jobs.title">Работа на производстве в Новосибирске</h2>
+          </div>
+          <div class="sec-head__aside">
+            <p class="lead" data-reveal data-i18n="ab.jobs.text">Официальное трудоустройство, стабильная загрузка и современное оборудование. Обучаем работе на станках с ЧПУ.</p>
+          </div>
+        </div>
+        <!-- Зарплаты — заглушки «от 00 000 ₽», ждём от заказчика -->
+        <div class="jobs" data-reveal-group>
+          <a class="job" href="mailto:order@sznp.info?subject=%D0%92%D0%B0%D0%BA%D0%B0%D0%BD%D1%81%D0%B8%D1%8F%3A%20%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%20%D1%81%D1%82%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%20%D1%81%20%D0%A7%D0%9F%D0%A3" data-reveal>
+            <h3 class="job__title" data-i18n="ab.job.1">Оператор станков с ЧПУ</h3>
+            <p class="job__meta"><span data-i18n="addr.nsk.city">Новосибирск</span><br><span data-i18n="ab.job.full52">Полная занятость, 5/2</span></p>
+            <span class="job__pay" data-i18n="ab.job.pay">от 00 000 ₽</span>
+            <span class="job__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="job" href="mailto:order@sznp.info?subject=%D0%92%D0%B0%D0%BA%D0%B0%D0%BD%D1%81%D0%B8%D1%8F%3A%20%D1%82%D0%BE%D0%BA%D0%B0%D1%80%D1%8C-%D1%83%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB" data-reveal>
+            <h3 class="job__title" data-i18n="ab.job.2">Токарь-универсал</h3>
+            <p class="job__meta"><span data-i18n="addr.nsk.city">Новосибирск</span><br><span data-i18n="ab.job.full52">Полная занятость, 5/2</span></p>
+            <span class="job__pay" data-i18n="ab.job.pay">от 00 000 ₽</span>
+            <span class="job__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="job" href="mailto:order@sznp.info?subject=%D0%92%D0%B0%D0%BA%D0%B0%D0%BD%D1%81%D0%B8%D1%8F%3A%20%D1%81%D0%BB%D0%B5%D1%81%D0%B0%D1%80%D1%8C%20%D0%BF%D0%BE%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%D1%83%20%D0%B3%D0%B8%D0%B4%D1%80%D0%B0%D0%B2%D0%BB%D0%B8%D0%BA%D0%B8" data-reveal>
+            <h3 class="job__title" data-i18n="ab.job.3">Слесарь по ремонту гидравлики</h3>
+            <p class="job__meta"><span data-i18n="addr.nsk.city">Новосибирск</span><br><span data-i18n="ab.job.shift">Полная занятость, сменный график</span></p>
+            <span class="job__pay" data-i18n="ab.job.pay">от 00 000 ₽</span>
+            <span class="job__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="job" href="mailto:order@sznp.info?subject=%D0%92%D0%B0%D0%BA%D0%B0%D0%BD%D1%81%D0%B8%D1%8F%3A%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20%D0%BF%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B0%D0%BC%20B2B" data-reveal>
+            <h3 class="job__title" data-i18n="ab.job.4">Менеджер по продажам B2B</h3>
+            <p class="job__meta"><span data-i18n="addr.nsk.city">Новосибирск</span><br><span data-i18n="ab.job.office">Полная занятость, офис</span></p>
+            <span class="job__pay" data-i18n="ab.job.pay">от 00 000 ₽</span>
+            <span class="job__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+        <div class="jobs-cta" data-reveal>
+          <div>
+            <h3 data-i18n="ab.jobs.cta.title">Не нашли подходящую вакансию?</h3>
+            <p data-i18n="ab.jobs.cta.text">Пришлите резюме — свяжемся, когда появится подходящее место.</p>
+          </div>
+          <a class="btn btn--blue" href="mailto:order@sznp.info?subject=%D0%A0%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5" data-i18n="ab.jobs.cta.btn">Отправить резюме</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Вопрос-ответ -->
+    <section class="section" id="faq">
+      <div class="container faq">
+        <div class="faq__aside">
+          <span class="plate" data-reveal data-i18n="about.faq">Вопрос-ответ</span>
+          <h2 class="h2" data-reveal data-i18n="ab.faq.title">Частые вопросы</h2>
+          <p class="lead" data-reveal data-i18n="ab.faq.text">Не нашли ответ? Спросите инженера напрямую.</p>
+          <a class="btn btn--blue" href="#contacts" data-reveal data-i18n="ab.faq.btn">Задать вопрос</a>
+        </div>
+        <div class="faq__list" data-reveal-group>
+          <details class="qa" name="faq" open data-reveal>
+            <summary><span data-i18n="ab.q.1">Можно ли заказать деталь, если нет чертежа?</span><span class="qa__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <p class="qa__a" data-i18n="ab.a.1">Да. Изготавливаем детали по чертежам, эскизам или образцам: снимаем размеры, строим 3D-модель и производим готовую деталь.</p>
+          </details>
+          <details class="qa" name="faq" data-reveal>
+            <summary><span data-i18n="ab.q.2">Сколько времени занимает изготовление?</span><span class="qa__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <p class="qa__a" data-i18n="ab.a.2">Типовую деталь изготавливаем от 5 дней. Точный срок зависит от сложности и количества — назовём его вместе с ценой после запроса.</p>
+          </details>
+          <details class="qa" name="faq" data-reveal>
+            <summary><span data-i18n="ab.q.3">Делаете ли вы единичные детали или только партии?</span><span class="qa__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <p class="qa__a" data-i18n="ab.a.3">Делаем и то и другое: изготавливаем изделия штучно и серийно.</p>
+          </details>
+          <details class="qa" name="faq" data-reveal>
+            <summary><span data-i18n="ab.q.4">Ремонтируете ли вы карданные валы?</span><span class="qa__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <p class="qa__a" data-i18n="ab.a.4">Да. Изготавливаем и ремонтируем карданные валы, выполняем динамическую балансировку на компьютерном стенде.</p>
+          </details>
+          <details class="qa" name="faq" data-reveal>
+            <summary><span data-i18n="ab.q.5">Как доставляете готовые изделия в регионы?</span><span class="qa__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <p class="qa__a" data-i18n="ab.a.5">Способ и срок доставки подбираем под каждый заказ — уточним их при расчёте.</p>
+          </details>
+          <details class="qa" name="faq" data-reveal>
+            <summary><span data-i18n="ab.q.6">Какая гарантия на изготовленные детали?</span><span class="qa__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+            <p class="qa__a" data-i18n="ab.a.6">Условия гарантии зависят от изделия и условий эксплуатации — сообщим их вместе с коммерческим предложением.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5.10 Контакты -->
+    <section class="section section--soft" id="contacts">
+      <div class="container contacts-grid">
+        <div class="form-card" data-reveal>
+          <span class="plate" data-i18n="contacts.plate">Контакты</span>
+          <div style="display:grid;gap:18px">
+            <h2 class="h2" data-i18n="contacts.title">Отправить запрос</h2>
+            <p class="lead" data-i18n="contacts.text">Опишите задачу или приложите номер детали — ответим с ценой и сроком.</p>
+          </div>
+          <form class="form" data-request-form novalidate>
+            <div class="field">
+              <label for="f-name" data-i18n="form.name">Имя</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required>
+              <span class="field__err" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="f-phone" data-i18n="form.phone">Телефон</label>
+              <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7" required>
+              <span class="field__err" aria-live="polite"></span>
+            </div>
+            <div class="field field--full">
+              <label for="f-task" data-i18n="form.task">Что нужно изготовить</label>
+              <textarea id="f-task" name="task" placeholder="Например: ремкомплект гидроцилиндра Sandvik, артикул…" data-i18n-attr="placeholder:form.task.ph"></textarea>
+            </div>
+            <label class="file">
+              <input type="file" name="files" multiple accept=".pdf,.dwg,.dxf,.step,.stp,.jpg,.jpeg,.png,.zip">
+              <span class="file__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.4 11.1-9.2 9.2a6 6 0 0 1-8.5-8.5l9.2-9.2a4 4 0 0 1 5.7 5.7l-9.2 9.2a2 2 0 0 1-2.8-2.8l8.5-8.5"/></svg></span>
+              <span class="file__text"><b data-i18n="form.file">Прикрепить чертёж или фото</b><span data-file-name data-empty="PDF, DWG, DXF, STEP, JPG, PNG — до 20 МБ">PDF, DWG, DXF, STEP, JPG, PNG — до 20 МБ</span></span>
+            </label>
+            <div class="form__foot">
+              <button class="btn btn--white" type="submit" data-i18n="form.submit">Отправить запрос</button>
+              <label class="check"><input type="checkbox" name="agree" required> <span data-i18n="form.agree">Согласие на обработку персональных данных.</span></label>
+            </div>
+            <p class="form__status" data-form-status aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="info" data-reveal-group>
+          <div class="info-card" data-reveal>
+            <span class="info-card__label" data-i18n="info.phone">Телефон</span>
+            <a class="info-card__big" href="tel:+79139200371">+7 913 920-03-71</a>
+          </div>
+          <div class="info-card" data-reveal>
+            <span class="info-card__label" data-i18n="info.mail">Почта</span>
+            <a class="info-card__mail" href="mailto:order@sznp.info">order@sznp.info</a>
+          </div>
+          <div class="info-card" data-reveal>
+            <span class="info-card__label" data-i18n="info.addr">Адреса</span>
+            <div class="addr">
+              <p data-i18n="info.addr.nsk">г. Новосибирск, ул. Дуси Ковальчук, 2/2, офис 33</p>
+              <div class="map-links">
+                <a href="https://yandex.ru/maps/?text=%D0%9D%D0%BE%D0%B2%D0%BE%D1%81%D0%B8%D0%B1%D0%B8%D1%80%D1%81%D0%BA%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%94%D1%83%D1%81%D0%B8%20%D0%9A%D0%BE%D0%B2%D0%B0%D0%BB%D1%8C%D1%87%D1%83%D0%BA%2C%202%2F2" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6 7-11.5A7 7 0 0 0 5 9.5C5 15 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Яндекс Карты</a>
+                <a href="https://2gis.ru/novosibirsk/search/%D0%94%D1%83%D1%81%D0%B8%20%D0%9A%D0%BE%D0%B2%D0%B0%D0%BB%D1%8C%D1%87%D1%83%D0%BA%202%2F2" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6 7-11.5A7 7 0 0 0 5 9.5C5 15 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>2ГИС</a>
+              </div>
+            </div>
+            <div class="addr">
+              <p data-i18n="info.addr.nor">г. Норильск, Рудник Таймырский, гаражный кооператив «Октябрь»</p>
+              <div class="map-links">
+                <a href="https://yandex.ru/maps/?text=%D0%9D%D0%BE%D1%80%D0%B8%D0%BB%D1%8C%D1%81%D0%BA%2C%20%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D0%BA%20%D0%A2%D0%B0%D0%B9%D0%BC%D1%8B%D1%80%D1%81%D0%BA%D0%B8%D0%B9" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6 7-11.5A7 7 0 0 0 5 9.5C5 15 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Яндекс Карты</a>
+                <a href="https://2gis.ru/norilsk/search/%D0%A0%D1%83%D0%B4%D0%BD%D0%B8%D0%BA%20%D0%A2%D0%B0%D0%B9%D0%BC%D1%8B%D1%80%D1%81%D0%BA%D0%B8%D0%B9" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6 7-11.5A7 7 0 0 0 5 9.5C5 15 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>2ГИС</a>
+              </div>
+            </div>
+          </div>
+          <div class="info-card" data-reveal>
+            <span class="info-card__label" data-i18n="info.social">Соцсети</span>
+            <div class="info-socials">
+              <a href="https://t.me/" aria-label="Telegram"><svg viewBox="44 52 140 140" fill="currentColor" aria-hidden="true"><path d="M100 144.4l48.4 35.7c5.5 3 9.5 1.5 10.9-5.1L179 82.2c2-8.1-3.1-11.7-8.4-9.3L55 117.5c-7.9 3.2-7.8 7.6-1.4 9.5l29.7 9.3L152 93c3.2-2 6.2-.9 3.8 1.3L98 146.5l-2 28.5c3 0 4.3-1.4 6-3l9.6-9.4"/></svg></a>
+              <a href="https://max.ru/" aria-label="MAX"><svg viewBox="0 0 100 100" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M50.7571 0.261719C78.2929 0.261719 99.8857 22.5974 99.8857 50.1474C99.8857 77.6974 77.6071 99.4903 51.0214 99.4903C41.5857 99.4903 37.0143 98.1617 29.65 92.9474C29.1429 92.5903 28.45 92.6831 28.0214 93.1403C22.3571 99.1831 7.85 103.426 7.18571 95.176C7.18571 80.7903 0 71.4474 0 49.876C0 21.5546 23.2214 0.261719 50.7571 0.261719ZM51.5286 24.8117C38.4643 24.126 28.2643 33.1974 26.0143 47.3831C24.15 59.1332 27.45 73.4546 30.2786 74.176C31.4786 74.4832 34.3571 72.276 36.4571 70.2974C36.85 69.926 37.45 69.8617 37.9071 70.1474C41.1786 72.1474 44.8786 73.6474 48.9571 73.8617C62.3714 74.5617 74.2571 64.0617 74.9643 50.6474C75.6643 37.2331 64.9429 25.5046 51.5286 24.8046V24.8117Z"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__main">
+      <div>
+        <img class="footer__logo" src="img/logo/sznp-white.png" alt="СЗНП Сибирь" width="232" height="52" loading="lazy">
+        <p class="footer__org" data-i18n="footer.org">ООО «СЗНП Сибирь»</p>
+        <p class="footer__tagline" data-i18n="footer.tagline">Запасные части и аналоги для горно-шахтного оборудования</p>
+      </div>
+
+      <nav aria-labelledby="f-menu">
+        <p class="footer__title" id="f-menu" data-i18n="footer.menu">Меню</p>
+        <ul class="footer__list">
+          <li><a href="about.html" data-i18n="nav.about">О компании</a></li>
+          <li><a href="production.html" data-i18n="nav.production">Производство</a></li>
+          <li><a href="catalog.html" data-i18n="nav.catalog">Каталог</a></li>
+          <li><a href="analogs.html" data-i18n="footer.analogs">Аналоги</a></li>
+          <li><a href="#contacts" data-i18n="nav.contacts">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="f-dirs">
+        <p class="footer__title" id="f-dirs" data-i18n="footer.dirs">Направления</p>
+        <ul class="footer__list">
+          <li><a href="catalog.html#seals" data-i18n="dir.seals">Уплотнения и ремкомплекты</a></li>
+          <li><a href="catalog.html#hydraulics" data-i18n="dir.hoses">РВД и гидроцилиндры</a></li>
+          <li><a href="catalog.html#materials" data-i18n="dir.materials">Полиуретан, резина, металл</a></li>
+          <li><a href="catalog.html#shotcrete" data-i18n="dir.shotcrete">Торкрет-оборудование</a></li>
+          <li><a href="cardan.html" data-i18n="dir.cardan">Карданный вал</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <p class="footer__title" data-i18n="footer.contacts">Контакты</p>
+        <a class="footer__phone" href="tel:+79139200371">+7 913 920-03-71</a>
+        <a class="footer__mail" href="mailto:order@sznp.info">order@sznp.info</a>
+        <div class="footer__addr">
+          <p><b data-i18n="addr.nsk.city">Новосибирск</b><br><span data-i18n="addr.nsk">ул. Дуси Ковальчук, 2/2, офис 33</span></p>
+          <p><b data-i18n="addr.nor.city">Норильск</b><br><span data-i18n="addr.nor">Рудник Таймырский, гаражный кооператив «Октябрь»</span></p>
+        </div>
+        <div class="socials">
+          <a href="https://t.me/" aria-label="Telegram">
+            <svg viewBox="44 52 140 140" fill="currentColor" aria-hidden="true"><path d="M100 144.4l48.4 35.7c5.5 3 9.5 1.5 10.9-5.1L179 82.2c2-8.1-3.1-11.7-8.4-9.3L55 117.5c-7.9 3.2-7.8 7.6-1.4 9.5l29.7 9.3L152 93c3.2-2 6.2-.9 3.8 1.3L98 146.5l-2 28.5c3 0 4.3-1.4 6-3l9.6-9.4"/></svg>
+          </a>
+          <a href="https://max.ru/" aria-label="MAX">
+            <svg viewBox="0 0 100 100" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M50.7571 0.261719C78.2929 0.261719 99.8857 22.5974 99.8857 50.1474C99.8857 77.6974 77.6071 99.4903 51.0214 99.4903C41.5857 99.4903 37.0143 98.1617 29.65 92.9474C29.1429 92.5903 28.45 92.6831 28.0214 93.1403C22.3571 99.1831 7.85 103.426 7.18571 95.176C7.18571 80.7903 0 71.4474 0 49.876C0 21.5546 23.2214 0.261719 50.7571 0.261719ZM51.5286 24.8117C38.4643 24.126 28.2643 33.1974 26.0143 47.3831C24.15 59.1332 27.45 73.4546 30.2786 74.176C31.4786 74.4832 34.3571 72.276 36.4571 70.2974C36.85 69.926 37.45 69.8617 37.9071 70.1474C41.1786 72.1474 44.8786 73.6474 48.9571 73.8617C62.3714 74.5617 74.2571 64.0617 74.9643 50.6474C75.6643 37.2331 64.9429 25.5046 51.5286 24.8046V24.8117Z"/></svg>
+          </a>
+          <a href="https://vk.com/sznpsibir" aria-label="ВКонтакте">
+            <svg viewBox="6 6 36 36" fill="currentColor" aria-hidden="true"><path d="M25.54 34.58c-10.94 0-17.18-7.5-17.44-19.98h5.48c.18 9.16 4.22 13.04 7.42 13.84V14.6h5.16v7.9c3.16-.34 6.48-3.94 7.6-7.9h5.16c-.86 4.88-4.46 8.48-7.02 9.96 2.56 1.2 6.66 4.34 8.22 10.02h-5.68c-1.22-3.8-4.26-6.74-8.28-7.14v7.14h-.62z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-in">
+        <span data-i18n="footer.copy">© 2026 ООО «СЗНП Сибирь»</span>
+        <ul class="footer__legal">
+          <li><a href="privacy.html" data-i18n="legal.privacy">Политика конфиденциальности</a></li>
+          <li><a href="offer.html" data-i18n="legal.offer">Оферта</a></li>
+          <li><a href="personal-data.html" data-i18n="legal.pd">Политика обработки персональных данных</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="i18n/en.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/reveal.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>
