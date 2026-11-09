@@ -74,8 +74,9 @@
 /* --- Фильтры --- */
 .filters {
   position: sticky; top: calc(var(--h-mainbar) + 24px);
-  max-height: calc(100vh - var(--h-mainbar) - 48px); overflow: auto; overscroll-behavior: contain;
-  scrollbar-width: thin;
+  max-height: calc(100vh - var(--h-mainbar) - 48px); overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain;
+  padding-inline: 10px 14px; margin-inline: -10px -14px;
+  scrollbar-width: thin; scrollbar-color: #E6E9ED transparent;
   display: grid; gap: 8px; align-content: start;
 }
 .filters__head { display: none; }
@@ -287,7 +288,7 @@
 
   .filters {
     position: fixed; z-index: 1010; inset: auto 0 0 0; top: auto; max-height: 88vh;
-    padding: 0 24px; border-radius: 24px 24px 0 0; background: var(--white);
+    margin: 0; padding: 0 24px; border-radius: 24px 24px 0 0; background: var(--white);
     box-shadow: 0 -20px 60px rgba(0, 20, 40, .25);
     transform: translateY(105%); visibility: hidden;
     transition: transform 380ms var(--ease-out), visibility 0s linear 380ms;
@@ -347,3 +348,9 @@ fieldset.fgroup { margin: 0; min-width: 0; border: 0; border-top: 1px solid #E3E
 fieldset.fgroup:first-of-type { border-top: 0; padding-top: 0; }
 legend.fgroup__title { float: left; width: 100%; padding: 0; }
 legend.fgroup__title + * { clear: both; }
+
+/* Светлый тонкий скроллбар у фильтров */
+.filters::-webkit-scrollbar { width: 6px; }
+.filters::-webkit-scrollbar-track { background: transparent; }
+.filters::-webkit-scrollbar-thumb { background: #E6E9ED; border-radius: 3px; }
+.filters::-webkit-scrollbar-thumb:hover { background: #D5DAE0; }
