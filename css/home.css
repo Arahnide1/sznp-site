@@ -100,9 +100,18 @@
   transition: transform 300ms var(--ease-out), box-shadow 300ms var(--ease-out);
 }
 .make-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
-.make-card__photo { aspect-ratio: 4 / 3; background: #F3F3F3; overflow: hidden; }
-.make-card__photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms var(--ease-out); }
-.make-card:hover .make-card__photo img { transform: scale(1.05); }
+/* деталь «без фона»: белый фон картинки растворяется в карточке (multiply), под деталью — мягкое фирменное свечение */
+.make-card__photo {
+  aspect-ratio: 4 / 3; overflow: hidden;
+  padding: 14px 14px 0;
+  background: radial-gradient(ellipse 72% 62% at 50% 56%, var(--blue-100) 0%, rgba(230, 238, 245, 0) 72%), var(--white);
+}
+.make-card__photo img {
+  width: 100%; height: 100%; object-fit: contain;
+  mix-blend-mode: multiply;
+  transition: transform 500ms var(--ease-out);
+}
+.make-card:hover .make-card__photo img { transform: translateY(-6px) scale(1.04); }
 .make-card__body { display: grid; gap: 10px; align-content: start; padding: 22px 24px 28px; }
 .make-card__title { font-size: 19px; line-height: 1.3; }
 .make-card__sub { font-size: var(--fs-small); color: var(--text-muted); line-height: 1.45; }
