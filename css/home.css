@@ -319,6 +319,7 @@
   .make-grid { grid-template-columns: repeat(3, 1fr); }
   .how-grid { grid-template-columns: repeat(4, 1fr); }
   .products__grid, .prod-grid, .contacts-grid, .about-intro { grid-template-columns: 1fr; }
+  .products__field .collage { margin-top: 8px; }
   .brands { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 639px) {
