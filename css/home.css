@@ -14,6 +14,8 @@
   transform: scale(1.08); transition: transform 7000ms linear;
 }
 .hero__slide.is-active > img { transform: scale(1); }
+/* кадр прижат влево, чтобы техника уходила вправо от заголовка */
+.hero__slide > img.hero__img--left { object-position: 0% 50%; transform-origin: 0% 50%; }
 /* затемнение снизу под текст */
 .hero__slide::after {
   content: ""; position: absolute; inset: 0;

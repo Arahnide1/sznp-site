@@ -9,7 +9,7 @@
     /* До первой отрисовки: ?static — статичный кадр без анимаций (для скриншотов), ?menu=open — открытое меню */
     (function (p, h) { if (p.has('static') || p.get('menu') === 'open') h.classList.add('is-static'); })(new URLSearchParams(location.search), document.documentElement);
   </script>
-  <link rel="preload" as="image" href="img/photo/hero-quarry.jpg">
+  <link rel="preload" as="image" href="img/photo/hero-drill-rig.jpg"><!-- откат: img/photo/hero-quarry.jpg -->
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/header.css">
@@ -82,7 +82,8 @@
     <section class="hero" aria-roledescription="карусель" aria-label="Главные предложения" tabindex="-1">
       <div class="hero__slides">
         <article class="hero__slide is-active" aria-roledescription="слайд" aria-label="1 из 3">
-          <img src="img/photo/hero-quarry.jpg" alt="Карьер: самосвал и экскаватор в работе" width="1920" height="1072" fetchpriority="high">
+          <!-- откат фона: <img src="img/photo/hero-quarry.jpg" alt="Карьер: самосвал и экскаватор в работе" width="1920" height="1072" fetchpriority="high"> -->
+          <img class="hero__img--left" src="img/photo/hero-drill-rig.jpg" alt="Буровая установка в шахтном тоннеле, на переднем плане — гидроцилиндры, подшипники, шестерня и РВД" width="1920" height="1080" fetchpriority="high">
           <div class="hero__content">
             <div class="container">
               <div class="hero__text">
@@ -94,7 +95,8 @@
           </div>
         </article>
         <article class="hero__slide" aria-roledescription="слайд" aria-label="2 из 3" aria-hidden="true">
-          <img src="img/photo/hero-drill.jpg" alt="Буровая установка в шахтном тоннеле" width="1920" height="1087">
+          <!-- откат фона: <img src="img/photo/hero-drill.jpg" alt="Буровая установка в шахтном тоннеле" width="1920" height="1087"> -->
+          <img class="hero__img--left" src="img/photo/hero-tunnel-loader.jpg" alt="Шахтный погрузчик с ковшом в тоннеле, рядом — запчасти и РВД" width="1920" height="1080">
           <div class="hero__content">
             <div class="container">
               <div class="hero__text">

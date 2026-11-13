@@ -8,7 +8,7 @@
   <script>
     (function (p, h) { if (p.has('static') || p.get('menu') === 'open') h.classList.add('is-static'); })(new URLSearchParams(location.search), document.documentElement);
   </script>
-  <link rel="preload" as="image" href="img/photo/about-hero.jpg">
+  <link rel="preload" as="image" href="img/photo/about-hero-shaft.jpg"><!-- откат: img/photo/about-hero.jpg -->
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/header.css">
@@ -80,7 +80,8 @@
 
     <!-- Первый экран -->
     <section class="page-hero">
-      <img src="img/photo/about-hero.jpg" alt="Токарная обработка детали на станке с ЧПУ" width="1920" height="720" fetchpriority="high">
+      <!-- откат фона: <img src="img/photo/about-hero.jpg" alt="Токарная обработка детали на станке с ЧПУ" width="1920" height="720" fetchpriority="high"> -->
+      <img src="img/photo/about-hero-shaft.jpg" alt="Фрезерная обработка штока гидроцилиндра на станке с ЧПУ" width="1920" height="1080" fetchpriority="high">
       <div class="container page-hero__in">
         <nav aria-label="Хлебные крошки">
           <ol class="crumbs">
