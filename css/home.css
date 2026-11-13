@@ -100,31 +100,22 @@
   transition: transform 300ms var(--ease-out), box-shadow 300ms var(--ease-out);
 }
 .make-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
-/* карточка — «шлифованный металл»: серебристый градиент с диагональными бликами и стеклянной обводкой */
+/* карточка точь-в-точь как в макете клиента: верх — картинка из макета (деталь, металл, блики, тени),
+   низ — тот же холодный серо-голубой, в который картинка плавно переходит; светлая «стеклянная» обводка */
 .make-card {
-  background:
-    linear-gradient(118deg,
-      rgba(255, 255, 255, 0) 16%, rgba(255, 255, 255, .95) 27%, rgba(255, 255, 255, 0) 38%,
-      rgba(255, 255, 255, 0) 54%, rgba(255, 255, 255, .85) 61%, rgba(255, 255, 255, 0) 68%,
-      rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, .75) 86%, rgba(255, 255, 255, 0) 92%),
-    linear-gradient(165deg, #E9EBEF 0%, #D2D6DC 48%, #DADDE2 78%, #CDD1D7 100%);
-  border: 1px solid rgba(255, 255, 255, .9);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .9), 0 10px 30px rgba(20, 35, 55, .08);
+  background: linear-gradient(180deg, #D3DCE9 0%, #D3DCE9 60%, #CFD8E5 100%);
+  border: 1px solid rgba(255, 255, 255, .65);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .6), 0 12px 32px rgba(20, 35, 55, .12);
 }
-/* деталь «без фона»: белый фон картинки растворяется в металле карточки (multiply) */
-.make-card__photo {
-  aspect-ratio: 1 / .86; overflow: hidden;
-  padding: 10px 8px 0;
-}
+.make-card__photo { aspect-ratio: 600 / 640; overflow: hidden; }
 .make-card__photo img {
-  width: 100%; height: 100%; object-fit: contain;
-  mix-blend-mode: multiply;
+  width: 100%; height: 100%; object-fit: cover;
   transition: transform 500ms var(--ease-out);
 }
-.make-card:hover .make-card__photo img { transform: translateY(-6px) scale(1.04); }
-.make-card__body { display: grid; gap: 10px; align-content: start; padding: 22px 24px 28px; }
-.make-card__title { font-size: 19px; line-height: 1.3; }
-.make-card__sub { font-size: var(--fs-small); color: var(--text-muted); line-height: 1.45; }
+.make-card:hover .make-card__photo img { transform: scale(1.04); }
+.make-card__body { display: grid; gap: 12px; align-content: start; padding: 4px 22px 28px; }
+.make-card__title { font-size: 19px; line-height: 1.28; color: #06111F; letter-spacing: -.005em; }
+.make-card__sub { font-size: 15px; color: #3B4656; line-height: 1.45; }
 
 /* --- 5.4 Разделы: 3 карточки-ссылки --- */
 .links-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
