@@ -100,11 +100,21 @@
   transition: transform 300ms var(--ease-out), box-shadow 300ms var(--ease-out);
 }
 .make-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
-/* деталь «без фона»: белый фон картинки растворяется в карточке (multiply), под деталью — мягкое фирменное свечение */
+/* карточка — «шлифованный металл»: серебристый градиент с диагональными бликами и стеклянной обводкой */
+.make-card {
+  background:
+    linear-gradient(118deg,
+      rgba(255, 255, 255, 0) 16%, rgba(255, 255, 255, .95) 27%, rgba(255, 255, 255, 0) 38%,
+      rgba(255, 255, 255, 0) 54%, rgba(255, 255, 255, .85) 61%, rgba(255, 255, 255, 0) 68%,
+      rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, .75) 86%, rgba(255, 255, 255, 0) 92%),
+    linear-gradient(165deg, #E9EBEF 0%, #D2D6DC 48%, #DADDE2 78%, #CDD1D7 100%);
+  border: 1px solid rgba(255, 255, 255, .9);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .9), 0 10px 30px rgba(20, 35, 55, .08);
+}
+/* деталь «без фона»: белый фон картинки растворяется в металле карточки (multiply) */
 .make-card__photo {
-  aspect-ratio: 4 / 3; overflow: hidden;
-  padding: 14px 14px 0;
-  background: radial-gradient(ellipse 72% 62% at 50% 56%, var(--blue-100) 0%, rgba(230, 238, 245, 0) 72%), var(--white);
+  aspect-ratio: 1 / .86; overflow: hidden;
+  padding: 10px 8px 0;
 }
 .make-card__photo img {
   width: 100%; height: 100%; object-fit: contain;
