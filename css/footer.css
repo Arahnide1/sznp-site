@@ -1,5 +1,5 @@
 /* ===== Подвал ===== */
-.site-footer { background: var(--black); color: var(--text-on-blue); font-size: var(--fs-small); }
+.site-footer { background: var(--black); color: var(--text-on-blue); font-size: var(--fs-small); font-family: var(--font-foot); }
 .footer__main {
   display: grid;
   grid-template-columns: 1.3fr 1fr 1.2fr 1.5fr;
@@ -12,7 +12,7 @@
 
 /* 13.11: заголовки колонок (Меню / Направления / Контакты) — без капса и разрядки, крупнее и белым.
    Откат: font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: .08em; color: var(--text-on-blue-muted); margin-bottom: 20px */
-.footer__title { font-family: var(--font-head, var(--font)); font-size: 20px; line-height: 1.25; letter-spacing: 0; color: var(--white); margin-bottom: 22px; font-weight: var(--fw-bold); }
+.footer__title { font-size: 20px; line-height: 1.25; letter-spacing: 0; color: var(--white); margin-bottom: 22px; font-weight: var(--fw-bold); }
 .footer__list { display: grid; gap: 14px; }
 .footer__list a { font-size: var(--fs-body); transition: color var(--dur-fast); }
 .footer__list a:hover { color: var(--white); opacity: .7; }

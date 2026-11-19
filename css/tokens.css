@@ -22,6 +22,8 @@
 
   /* Шрифт — Tahoma (выбор клиента). Tahoma есть только в Regular и Bold */
   --font: Tahoma, Verdana, "Segoe UI", Geneva, sans-serif;
+  /* 19.11: в подвале пробуем Calibri (по просьбе заказчика). Carlito — метрически совместимая замена там, где Calibri нет. Откат: убрать font-family у .site-footer в footer.css */
+  --font-foot: Calibri, Carlito, "Segoe UI", Tahoma, sans-serif;
   --fw-regular: 400;
   --fw-bold: 700;
 
