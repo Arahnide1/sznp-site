@@ -20,7 +20,9 @@
     radial-gradient(700px 420px at 10% 100%, rgba(0, 75, 135, .9), transparent 70%);
 }
 .cat-hero__pic {
-  position: absolute; right: -40px; bottom: -60px; width: min(46vw, 760px); opacity: .22;
+  /* 18.11: раньше задавалась только ширина, а высота бралась из атрибута height="744" — установка растягивалась.
+     Теперь размер задаётся по высоте, ширина считается сама по пропорциям (529×744). Откат: width: min(46vw, 760px); right: -40px; bottom: -60px */
+  position: absolute; right: clamp(0px, 3vw, 64px); bottom: -48px; height: 112%; width: auto; max-width: none; opacity: .22;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 40%); mask-image: linear-gradient(90deg, transparent, #000 40%);
   pointer-events: none;
 }
