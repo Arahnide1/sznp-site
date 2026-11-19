@@ -1,0 +1,78 @@
+/* ===== Внутренние страницы: Производство, Карданный вал, Аналоги =====
+   Первый экран, FAQ, «производственная база» — из about.css; сетки карточек — из home.css. */
+
+/* кадрирование фото первого экрана */
+.page-hero--production > img { object-position: 50% 35%; }
+.page-hero--cardan > img { object-position: 55% 50%; }
+.page-hero--analogs > img { object-position: 60% 50%; }
+
+/* --- Шаги «от заявки до детали» --- */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; counter-reset: none; }
+.steps--3 { grid-template-columns: repeat(3, 1fr); }
+.step {
+  display: grid; gap: 14px; align-content: start;
+  padding: 36px 32px; border-radius: var(--r-card);
+  background: var(--white); box-shadow: var(--shadow-card);
+  transition: background-color var(--dur-fast), color var(--dur-fast);
+}
+.section--soft .step { background: var(--white); }
+.step__n { font-size: 56px; line-height: 1; font-weight: var(--fw-bold); color: var(--blue); letter-spacing: -.02em; transition: color var(--dur-fast); }
+.step__title { font-size: 22px; line-height: 1.25; }
+.step__text { font-size: var(--fs-small); line-height: 1.5; color: var(--text-muted); transition: color var(--dur-fast); }
+.step:hover { background: var(--blue); color: var(--white); }
+.step:hover .step__n { color: var(--white); }
+.step:hover .step__text { color: var(--text-on-blue-muted); }
+
+/* --- Текст + фото --- */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.split__text { display: grid; gap: 24px; justify-items: start; }
+.split__btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.split__photo { border-radius: var(--r-accent); }
+.split__photo img { width: 100%; height: auto; display: block; }
+.split--rev .split__photo { order: -1; }
+.btn--soft { background: var(--bg-soft); color: var(--blue); }
+.btn--soft:hover { background: var(--blue-100); }
+
+/* три карточки вместо четырёх */
+.values--3 { grid-template-columns: repeat(3, 1fr); }
+
+/* карточки преимуществ в одну колонку рядом с фото */
+.prod-cards--col { grid-template-columns: 1fr; }
+
+/* --- Блок «Начните с каталога» --- */
+.cat-teaser {
+  display: grid; grid-template-columns: 1.1fr 1fr auto; gap: 48px; align-items: center;
+  padding: 48px 56px; border-radius: var(--r-card); background: var(--white); box-shadow: var(--shadow-card);
+}
+.cat-teaser__text { display: grid; gap: 16px; }
+.cat-teaser__stats { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, auto); gap: 32px; justify-content: start; }
+.cat-teaser__stats li { display: grid; gap: 6px; }
+.cat-teaser__stats b { font-size: 36px; line-height: 1; font-weight: var(--fw-bold); white-space: nowrap; color: var(--blue); }
+.cat-teaser__stats span { font-size: var(--fs-small); color: var(--text-muted); }
+
+/* --- Призыв внизу страницы --- */
+.cta {
+  display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap;
+  padding: 56px 64px; border-radius: var(--r-accent);
+  background: var(--blue); color: var(--white);
+}
+.cta__text { display: grid; gap: 12px; max-width: 640px; }
+.cta .lead { color: var(--text-on-blue-muted); }
+
+@media (max-width: 1279px) {
+  .steps { grid-template-columns: repeat(2, 1fr); }
+  .cat-teaser { grid-template-columns: 1fr; gap: 32px; justify-items: start; }
+}
+@media (max-width: 1023px) {
+  .split { grid-template-columns: 1fr; gap: 40px; }
+  .split--rev .split__photo { order: 0; }
+  .values--3, .steps--3 { grid-template-columns: 1fr; }
+  .cta { padding: 40px 32px; }
+}
+@media (max-width: 639px) {
+  .steps { grid-template-columns: 1fr; }
+  .step { padding: 28px 24px; }
+  .cat-teaser__stats { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .cta { padding: 32px 24px; }
+  .cat-teaser { padding: 32px 24px; }
+}
