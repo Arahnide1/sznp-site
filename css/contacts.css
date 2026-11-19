@@ -1,0 +1,54 @@
+/* ===== Контакты =====
+   Первый экран (.page-hero) — из about.css, форма/карта/соцсети — из home.css. */
+
+/* --- Быстрая связь: телефон, почта, мессенджеры --- */
+.c-quick { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.c-card {
+  display: grid; gap: 14px; align-content: start;
+  padding: 40px; border-radius: var(--r-card);
+  background: var(--white); box-shadow: var(--shadow-card);
+}
+.c-card__ic {
+  width: 56px; height: 56px; border-radius: var(--r-pill);
+  display: grid; place-items: center; margin-bottom: 8px;
+  background: var(--bg-soft); color: var(--blue);
+}
+.c-card__ic svg { width: 26px; height: 26px; }
+.c-card__label { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: .08em; font-weight: var(--fw-bold); color: var(--text-muted); }
+.c-card__big { font-size: 28px; line-height: 1.2; font-weight: var(--fw-bold); color: var(--blue); overflow-wrap: anywhere; transition: color var(--dur-fast); }
+.c-card__big:hover { color: var(--blue-700); }
+.c-card .info-socials { margin-top: 4px; }
+
+.c-card--accent { background: var(--blue); color: var(--white); border-radius: var(--r-accent); box-shadow: none; }
+.c-card--accent .c-card__ic { background: rgba(255, 255, 255, .16); color: var(--white); }
+.c-card--accent .c-card__label { color: var(--text-on-blue-muted); }
+.c-card--accent .c-card__big { color: var(--white); font-size: 32px; }
+.c-card--accent .c-card__big:hover { color: var(--white); opacity: .8; }
+
+/* --- Офисы --- */
+.offices { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; }
+.office {
+  display: grid; gap: 18px; grid-template-rows: auto auto 1fr auto; justify-items: start;
+  padding: 48px; border-radius: var(--r-card); background: var(--white);
+}
+.office__city { font-size: 40px; line-height: 1.1; letter-spacing: -.01em; }
+.office__addr { font-size: 19px; line-height: 1.5; color: var(--text-muted); max-width: 420px; }
+.office .map-links { margin-top: 8px; align-self: end; }
+
+/* --- Запрос: форма + фото --- */
+.form-card__head { display: grid; gap: 18px; }
+.c-photo { position: relative; overflow: hidden; border-radius: var(--r-accent); min-height: 420px; background: var(--black); }
+.c-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 38% 50%; }
+
+/* первый экран: фото карьера — светлый край справа, поэтому тень слева плотнее */
+.page-hero > img[src*="hero-quarry"] { object-position: 70% 50%; }
+
+@media (max-width: 1023px) {
+  .c-quick, .offices { grid-template-columns: 1fr; }
+  .c-photo { min-height: 320px; }
+}
+@media (max-width: 639px) {
+  .c-card, .office { padding: 32px 24px; }
+  .office__city { font-size: 32px; }
+  .c-card--accent .c-card__big { font-size: 28px; }
+}
