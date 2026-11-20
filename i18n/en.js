@@ -290,4 +290,15 @@ window.SZNP_I18N.en = {
   'cat.ask': 'Request price',
   'cat.chip.photo': 'With photo',
   'cat.chip.resetAll': 'Reset all',
+// Заголовки вкладок, подпись файла и кнопки карт
+'title.index': 'SZNP Siberia — spare parts and analogues for mining equipment',
+'title.about': 'About us — SZNP Siberia',
+'title.production': 'Manufacturing — SZNP Siberia',
+'title.analogs': 'Analogues — SZNP Siberia',
+'title.cardan': 'Cardan shafts — SZNP Siberia',
+'title.catalog': 'Spare parts catalogue — SZNP Siberia',
+'title.contacts': 'Contacts — SZNP Siberia',
+'form.file.hint': 'PDF, DWG, DXF, STEP, JPG, PNG — up to 20 MB',
+'map.yandex': 'Yandex Maps',
+'map.2gis': '2GIS',
   };

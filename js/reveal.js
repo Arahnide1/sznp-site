@@ -10,7 +10,7 @@
 
   document.querySelectorAll('[data-reveal-group]').forEach((group) => {
     group.querySelectorAll('[data-reveal], [data-reveal-photo]').forEach((el, i) => {
-      el.style.setProperty('--reveal-delay', i * 80 + 'ms');
+      el.style.setProperty('--reveal-delay', Math.min(i * 60, 240) + 'ms'); /* Откат: i * 80 + 'ms' */
     });
   });
   document.querySelectorAll('.geo__map .pin').forEach((pin, i) => {

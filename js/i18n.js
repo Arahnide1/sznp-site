@@ -17,6 +17,8 @@
   function save(lang) {
     try { localStorage.setItem(KEY, lang); } catch (e) { /* приватный режим */ }
   }
+const ruTitle = document.title;
+const pageKey = 'title.' + ((location.pathname.split('/').pop() || 'index.html').replace(/\.html$/i, '') || 'index');
 
   function apply(lang) {
     const table = dict[lang] || {};
@@ -35,6 +37,21 @@
     });
     document.documentElement.lang = lang;
     document.querySelectorAll('.lang__btn').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+document.title = lang === 'ru' ? ruTitle : (table[pageKey] ?? ruTitle);
+document.querySelectorAll('[data-file-name]').forEach((el) => {
+if (!el.dataset.ruEmpty) el.dataset.ruEmpty = el.dataset.empty || el.textContent;
+const val = lang === 'ru' ? el.dataset.ruEmpty : (table['form.file.hint'] ?? el.dataset.ruEmpty);
+const isDefault = el.textContent.trim() === (el.dataset.empty || '').trim();
+el.dataset.empty = val;
+if (isDefault) el.textContent = val;
+});
+document.querySelectorAll('.map-links a').forEach((a) => {
+const node = [...a.childNodes].find((n) => n.nodeType === 3 && n.nodeValue.trim());
+if (!node) return;
+if (!a.dataset.ruMap) a.dataset.ruMap = node.nodeValue.trim();
+const key = a.dataset.ruMap.includes('2ГИС') ? 'map.2gis' : 'map.yandex';
+node.nodeValue = lang === 'ru' ? a.dataset.ruMap : (table[key] ?? a.dataset.ruMap);
+});
     window.dispatchEvent(new CustomEvent('sznp:lang', { detail: lang }));
   }
 
