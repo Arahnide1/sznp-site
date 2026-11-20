@@ -209,7 +209,8 @@
 .prod-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 24px; }
 .prod-big { position: relative; min-height: 620px; border-radius: var(--r-accent); color: var(--white); }
 .prod-big::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0, 20, 40, .82) 0%, rgba(0, 20, 40, 0) 48%); }
-.prod-big img { position: absolute; inset: 0; }
+/* 18.11: переворот фото ЧПУ на 180° (отдельное свойство rotate, чтобы не конфликтовать с transform в [data-reveal-photo]). Откат: убрать rotate: 180deg; */
+.prod-big img { position: absolute; inset: 0; rotate: 180deg; }
 .prod-big__cap { position: absolute; left: 40px; right: 40px; bottom: 36px; z-index: 1; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
 .prod-big__cap h3 { font-size: 28px; line-height: 1.25; max-width: 460px; }
 .prod-big__city { display: inline-flex; align-items: center; gap: 8px; font-size: var(--fs-small); font-weight: var(--fw-bold); padding: 8px 14px; border-radius: var(--r-pill); background: rgba(255, 255, 255, .16); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
