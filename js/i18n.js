@@ -35,6 +35,7 @@
     });
     document.documentElement.lang = lang;
     document.querySelectorAll('.lang__btn').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+    window.dispatchEvent(new CustomEvent('sznp:lang', { detail: lang }));
   }
 
   const initial = params.get('lang') || readSaved() || 'ru';
