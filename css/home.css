@@ -104,12 +104,18 @@
 .make-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
 /* карточка точь-в-точь как в макете клиента: верх — картинка из макета (деталь, металл, блики, тени),
    низ — тот же холодный серо-голубой, в который картинка плавно переходит; светлая «стеклянная» обводка */
-/* 18.11: фон блока #make фирменный синий (как в блоке с деталями), карточки белые. Откат: убрать #make и вернуть linear-gradient на .make-card */
-#make { background: var(--blue); color: var(--white); }
+/* 18.11: студийный серо-голубой фон с диагональными бликами на #make (как на фото деталей), карточки белые. Откат: убрать #make и вернуть linear-gradient на .make-card */
+#make {
+  background:
+    radial-gradient(62% 75% at 14% 12%, rgba(255, 255, 255, .62) 0%, rgba(255, 255, 255, 0) 60%),
+    radial-gradient(50% 65% at 86% 18%, rgba(156, 168, 182, .42) 0%, rgba(156, 168, 182, 0) 64%),
+    linear-gradient(128deg, #DCE6F2 0%, #B4BECA 26%, #E2EAF5 48%, #B9C4D3 72%, #D4DEE9 100%);
+  color: var(--text);
+}
 .make-card {
   background: var(--white);
-  border: 1px solid rgba(255, 255, 255, .9);
-  box-shadow: 0 16px 36px rgba(0, 20, 48, .25);
+  border: 1px solid rgba(255, 255, 255, .92);
+  box-shadow: 0 12px 32px rgba(20, 35, 55, .12);
 }
 .make-card__photo { aspect-ratio: 600 / 640; overflow: hidden; }
 .make-card__photo img {
