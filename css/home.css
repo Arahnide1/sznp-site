@@ -104,12 +104,12 @@
 .make-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
 /* карточка точь-в-точь как в макете клиента: верх — картинка из макета (деталь, металл, блики, тени),
    низ — тот же холодный серо-голубой, в который картинка плавно переходит; светлая «стеклянная» обводка */
-/* 18.11: фон блока #make как раньше в карточках, карточки белые. Откат: вернуть linear-gradient на .make-card и убрать #make */
-#make { background: linear-gradient(180deg, #D3DCE9 0%, #D3DCE9 60%, #CFD8E5 100%); }
+/* 18.11: фон блока #make фирменный синий (как в блоке с деталями), карточки белые. Откат: убрать #make и вернуть linear-gradient на .make-card */
+#make { background: var(--blue); color: var(--white); }
 .make-card {
   background: var(--white);
-  border: 1px solid rgba(255, 255, 255, .85);
-  box-shadow: 0 12px 32px rgba(20, 35, 55, .10);
+  border: 1px solid rgba(255, 255, 255, .9);
+  box-shadow: 0 16px 36px rgba(0, 20, 48, .25);
 }
 .make-card__photo { aspect-ratio: 600 / 640; overflow: hidden; }
 .make-card__photo img {
