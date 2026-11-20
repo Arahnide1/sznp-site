@@ -104,10 +104,12 @@
 .make-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
 /* карточка точь-в-точь как в макете клиента: верх — картинка из макета (деталь, металл, блики, тени),
    низ — тот же холодный серо-голубой, в который картинка плавно переходит; светлая «стеклянная» обводка */
+/* 18.11: фон блока #make как раньше в карточках, карточки белые. Откат: вернуть linear-gradient на .make-card и убрать #make */
+#make { background: linear-gradient(180deg, #D3DCE9 0%, #D3DCE9 60%, #CFD8E5 100%); }
 .make-card {
-  background: linear-gradient(180deg, #D3DCE9 0%, #D3DCE9 60%, #CFD8E5 100%);
-  border: 1px solid rgba(255, 255, 255, .65);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .6), 0 12px 32px rgba(20, 35, 55, .12);
+  background: var(--white);
+  border: 1px solid rgba(255, 255, 255, .85);
+  box-shadow: 0 12px 32px rgba(20, 35, 55, .10);
 }
 .make-card__photo { aspect-ratio: 600 / 640; overflow: hidden; }
 .make-card__photo img {
@@ -355,6 +357,9 @@
 @media (max-width: 639px) {
   .make-grid, .links-grid, .prod-cards, .form, .stats { grid-template-columns: 1fr; }
   .how-grid, .brands { grid-template-columns: repeat(2, 1fr); }
+  /* 18.11: центрирование карточек «Как мы работаем» на мобильной версии. Откат: убрать 2 правила ниже */
+  .how-item { justify-items: center; text-align: center; }
+  .how-item img { margin: 0; }
   .hero__content { bottom: 160px; }
   .hero__progress { display: none; }
   .form-card { padding: 32px 24px; }
