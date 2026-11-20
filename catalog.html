@@ -87,28 +87,28 @@
             <li><span aria-current="page" data-i18n="nav.catalog">Каталог</span></li>
           </ol>
         </nav>
-        <h1 class="cat-hero__title">Каталог запчастей</h1>
-        <p class="cat-hero__sub">Аналоги запасных частей и расходников для горно-шахтной, карьерной техники и торкрет-установок. Ищите по коду детали или названию.</p>
+        <h1 data-i18n="cat.title" class="cat-hero__title">Каталог запчастей</h1>
+        <p data-i18n="cat.sub" class="cat-hero__sub">Аналоги запасных частей и расходников для горно-шахтной, карьерной техники и торкрет-установок. Ищите по коду детали или названию.</p>
         <form class="search" role="search">
           <svg class="search__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          <label class="visually-hidden" for="cat-q">Поиск по каталогу</label>
-          <input id="cat-q" type="search" placeholder="Код детали или название, например 4446140" autocomplete="off" enterkeyhint="search" data-search>
-          <button class="search__clear" type="button" aria-label="Очистить поиск" data-search-clear hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-          <button class="btn btn--blue" type="submit">Найти</button>
+          <label  data-i18n="cat.search.label" class="visually-hidden" for="cat-q">Поиск по каталогу</label>
+          <input  data-i18n-attr="placeholder:cat.search.ph" id ="cat-q" type="search" placeholder="Код детали или название, например 4446140" autocomplete="off" enterkeyhint="search" data-search>
+          <button  data-i18n-attr="aria-label:cat.search.clear" class="search__clear" type="button" aria-label="Очистить поиск" data-search-clear hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+          <button  data-i18n="cat.search.btn" class="btn btn--blue" type="submit">Найти</button>
         </form>
         <div class="quick">
-          <span class="quick__label">Часто ищут:</span>
-          <button type="button" data-quick="Ремкомплект">Ремкомплект</button>
-          <button type="button" data-quick="Уплотнительное кольцо">Уплотнительное кольцо</button>
-          <button type="button" data-quick="Гидроцилиндр">Гидроцилиндр</button>
+          <span  data-i18n="cat.quick.label" class="quick__label">Часто ищут:</span>
+          <button  data-i18n="cat.quick.1" type="button" data-quick="Ремкомплект">Ремкомплект</button>
+          <button  data-i18n="cat.quick.2" type="button" data-quick="Уплотнительное кольцо">Уплотнительное кольцо</button>
+          <button  data-i18n="cat.quick.3" type="button" data-quick="Гидроцилиндр">Гидроцилиндр</button>
           <button type="button" data-quick="Sandvik">Sandvik</button>
           <button type="button" data-quick="Komatsu">Komatsu</button>
           <button type="button" data-quick="Aliva">Aliva</button>
         </div>
         <div class="cat-hero__stats">
-          <div><b>1 432</b><span>позиции в каталоге</span></div>
-          <div><b>18</b><span>марок техники</span></div>
-          <div><b>от 5 дней</b><span>изготовление</span></div>
+          <div><b>1 432</b><span data-i18n="an.cat.s1">позиции в каталоге</span></div>
+          <div><b>18</b><span data-i18n="an.cat.s2">марок техники</span></div>
+          <div><b data-i18n="an.cat.s3b">от 5 дней</b><span data-i18n="an.cat.s3">изготовление</span></div>
         </div>
       </div>
     </section>
@@ -117,31 +117,31 @@
     <section class="cat" id="catalog" data-catalog>
       <div class="container cat__in">
 
-        <form class="filters" aria-label="Фильтры каталога" onsubmit="return false">
+        <form data-i18n-attr="aria-label:cat.filters.aria" class="filters" aria-label="Фильтры каталога" onsubmit="return false">
           <div class="filters__head">
-            <h2>Фильтры</h2>
-            <button class="filters__close" type="button" aria-label="Закрыть фильтры" data-filters-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+            <h2 data-i18n="cat.filters">Фильтры</h2>
+            <button data-i18n-attr="aria-label:cat.filters.close" class="filters__close" type="button" aria-label="Закрыть фильтры" data-filters-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
           </div>
 
           <fieldset class="fgroup">
-            <legend class="fgroup__title">Тип изделия</legend>
+            <legend class="fgroup__title" data-i18n="cat.type">Тип изделия</legend>
             <div data-types></div>
           </fieldset>
 
           <fieldset class="fgroup">
-            <legend class="fgroup__title">Марка техники</legend>
+            <legend class="fgroup__title" data-i18n="cat.brand">Марка техники</legend>
             <div data-brands></div>
           </fieldset>
 
           <div class="fgroup">
-            <label class="switch"><span>Только с фото</span><input type="checkbox" name="photo"><span class="switch__track"></span></label>
+            <label class="switch"><span data-i18n="cat.onlyPhoto">Только с фото</span><input type="checkbox" name="photo"><span class="switch__track"></span></label>
           </div>
 
-          <button class="filters__reset" type="button" data-reset><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>Сбросить фильтры</button>
+          <button class="filters__reset" type="button" data-reset><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg><span data-i18n="cat.resetAll">Сбросить фильтры</span></button>
 
           <div class="filters__foot">
-            <button class="btn btn--ghost" type="button" data-reset>Сбросить</button>
-            <button class="btn btn--blue" type="button" data-filters-close data-apply-count>Показать</button>
+            <button class="btn btn--ghost" type="button" data-reset data-i18n="cat.reset">Сбросить</button>
+            <button class="btn btn--blue" type="button" data-filters-close data-apply-count data-i18n="cat.show">Показать</button>
           </div>
         </form>
 
@@ -149,20 +149,20 @@
           <div class="toolbar">
             <p class="toolbar__count" aria-live="polite">1432 <span>позиции</span></p>
             <div class="toolbar__side">
-              <button class="filters-btn" type="button" data-filters-open><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>Фильтры<b data-filters-count></b></button>
+              <button class="filters-btn" type="button" data-filters-open><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg><span data-i18n="cat.filters">Фильтры</span><b data-filters-count></b></button>
               <label class="select">
-                <span class="visually-hidden">Сортировка</span>
+                <span class="visually-hidden" data-i18n="cat.sort">Сортировка</span>
                 <select data-sort>
-                  <option value="default">Сначала с фото</option>
-                  <option value="name">По названию</option>
-                  <option value="brand">По марке</option>
-                  <option value="code">По коду</option>
+                  <option value="default" data-i18n="cat.sort.default">Сначала с фото</option>
+                  <option value="name" data-i18n="cat.sort.name">По названию</option>
+                  <option value="brand" data-i18n="cat.sort.brand">По марке</option>
+                  <option value="code" data-i18n="cat.sort.code">По коду</option>
                 </select>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </label>
-              <div class="views" role="group" aria-label="Вид каталога">
-                <button type="button" data-view="grid" aria-pressed="true" aria-label="Плиткой"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></button>
-                <button type="button" data-view="list" aria-pressed="false" aria-label="Списком"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1" fill="currentColor"/><circle cx="4.5" cy="12" r="1" fill="currentColor"/><circle cx="4.5" cy="18" r="1" fill="currentColor"/></svg></button>
+              <div data-i18n-attr="aria-label:cat.views" class="views" role="group" aria-label="Вид каталога">
+                <button data-i18n-attr="aria-label:cat.view.grid" type="button" data-view="grid" aria-pressed="true" aria-label="Плиткой"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></button>
+                <button data-i18n-attr="aria-label:cat.view.list" type="button" data-view="list" aria-pressed="false" aria-label="Списком"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1" fill="currentColor"/><circle cx="4.5" cy="12" r="1" fill="currentColor"/><circle cx="4.5" cy="18" r="1" fill="currentColor"/></svg></button>
               </div>
             </div>
           </div>
@@ -173,26 +173,26 @@
 
           <div class="empty" hidden>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M8.5 8.5l5 5M13.5 8.5l-5 5"/></svg>
-            <h3>Ничего не нашлось</h3>
-            <p>Проверьте код детали или сбросьте фильтры. Если детали нет в каталоге — изготовим по чертежу или образцу.</p>
+            <h3 data-i18n="cat.empty.title">Ничего не нашлось</h3>
+            <p data-i18n="cat.empty.text">Проверьте код детали или сбросьте фильтры. Если детали нет в каталоге — изготовим по чертежу или образцу.</p>
             <div class="empty__acts">
-              <button class="btn btn--ghost" type="button" data-reset>Сбросить фильтры</button>
-              <a class="btn btn--blue" href="#contacts">Отправить запрос</a>
+              <button class="btn btn--ghost" type="button" data-reset data-i18n="cat.resetAll">Сбросить фильтры</button>
+              <a class="btn btn--blue" href="#contacts" data-i18n="header.cta">Отправить запрос</a>
             </div>
           </div>
 
           <div class="more" hidden>
             <div class="more__bar"><i></i></div>
             <p class="more__text"></p>
-            <button class="btn btn--ghost" type="button">Показать ещё</button>
+            <button class="btn btn--ghost" type="button" data-i18n="cat.more">Показать ещё</button>
           </div>
 
           <div class="nofind" data-reveal>
             <div>
-              <h2>Не нашли нужную деталь?</h2>
-              <p>В каталоге — только часть того, что мы делаем. Пришлите код, чертёж или фото образца: подберём аналог или изготовим с нуля.</p>
+              <h2 data-i18n="cat.nofind.title">Не нашли нужную деталь?</h2>
+              <p data-i18n="cat.nofind.text">В каталоге — только часть того, что мы делаем. Пришлите код, чертёж или фото образца: подберём аналог или изготовим с нуля.</p>
             </div>
-            <a class="btn btn--white" href="#contacts">Прислать чертёж</a>
+            <a class="btn btn--white" href="#contacts" data-i18n="products.btn">Прислать чертёж</a>
           </div>
         </div>
 

@@ -5,6 +5,10 @@
   if (!root || !DATA.length) return;
 
   var PAGE = 24;
+  function isEn() { return document.documentElement.lang === 'en'; }
+  function t(k, ru) { return isEn() ? ((window.SZNP_I18N && window.SZNP_I18N.en && window.SZNP_I18N.en[k]) || ru) : ru; }
+  function typeName(code) { return t('cat.t.' + code, TYPE_NAME[code]); }
+  function brandName(b) { return b === 'Без марки' ? t('cat.brand.none', b) : b; }
   var TYPES = [
     ['seals', 'Уплотнения и кольца'],
     ['kits', 'Ремкомплекты'],
@@ -15,9 +19,9 @@
     ['other', 'Другие детали']
   ];
   var BRAND_GROUPS = [
-    ['Горно-шахтная техника', ['Sandvik', 'Epiroc', 'Normet', 'Atlas Copco']],
-    ['Карьерная техника', ['Komatsu', 'CAT', 'TEREX']],
-    ['Торкрет-установки', ['Aliva', 'Торнадо', 'Putzmeister', 'Meyco']]
+    ['Горно-шахтная техника', ['Sandvik', 'Epiroc', 'Normet', 'Atlas Copco'], 'cat.bg.mining'],
+    ['Карьерная техника', ['Komatsu', 'CAT', 'TEREX'], 'cat.bg.quarry'],
+    ['Торкрет-установки', ['Aliva', 'Торнадо', 'Putzmeister', 'Meyco'], 'cat.bg.shotcrete']
   ];
   // Переходы с главной: catalog.html#seals и т. п.
   var PRESETS = {
@@ -46,7 +50,7 @@
   function readUrl() {
     var p = new URLSearchParams(location.search);
     state.q = p.get('q') || '';
-    state.type = (p.get('type') || '').split(',').filter(function (t) { return TYPE_NAME[t]; });
+    state.type = (p.get('type') || '').split(',').filter(function (t) { return typeName(t); });
     state.brand = (p.get('brand') || '').split(',').filter(function (b) { return brandCount[b]; });
     state.photo = p.get('photo') === '1';
     state.sort = p.get('sort') || 'default';
@@ -124,15 +128,15 @@
   function card(it, n, toks) {
     var media = it.img
       ? '<img src="img/catalog/' + it.img + '.jpg" alt="' + esc(it.name + ' ' + it.brand) + '" width="480" height="480" loading="lazy" decoding="async">'
-      : '<div class="pc__ph"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + PH[it.type] + '</svg><span>Фото по запросу</span></div>';
+      : '<div class="pc__ph"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + PH[it.type] + '</svg><span>' + t('cat.noPhoto', 'Фото по запросу') + '</span></div>';
     return '<article class="pc" style="--i:' + n + '">' +
       '<div class="pc__img">' + media + '</div>' +
       '<div class="pc__body">' +
-        '<span class="pc__brand">' + esc(it.brand) + (it.model ? ' <i>· ' + esc(it.model) + '</i>' : '') + '</span>' +
+        '<span class="pc__brand">' + esc(brandName(it.brand)) + (it.model ? ' <i>· ' + esc(it.model) + '</i>' : '') + '</span>' +
         '<h3 class="pc__name">' + hl(it.name, toks) + '</h3>' +
-        '<button class="pc__code" type="button" data-copy="' + esc(it.code) + '" title="Скопировать код">Код <b>' + hl(it.code, toks) + '</b>' + ICON.copy + '</button>' +
+        '<button class="pc__code" type="button" data-copy="' + esc(it.code) + '" title="' + t('cat.copyTitle', 'Скопировать код') + '">' + t('cat.code', 'Код') + ' <b>' + hl(it.code, toks) + '</b>' + ICON.copy + '</button>' +
       '</div>' +
-      '<a class="pc__cta" href="#contacts" data-ask="' + it.i + '"><span>Запросить цену</span>' + ICON.arrow + '</a>' +
+      '<a class="pc__cta" href="#contacts" data-ask="' + it.i + '"><span>' + t('cat.ask', 'Запросить цену') + '</span>' + ICON.arrow + '</a>' +
     '</article>';
   }
   function plural(n, a, b, c) { var m = n % 10, h = n % 100; return m === 1 && h !== 11 ? a : m >= 2 && m <= 4 && (h < 10 || h >= 20) ? b : c; }
@@ -144,20 +148,20 @@
     return '<label class="opt" data-opt="' + name + ':' + esc(value) + '"><input type="checkbox" name="' + name + '" value="' + esc(value) + '">' +
       '<span class="opt__box">' + ICON.check + '</span><span class="opt__name">' + esc(label) + '</span><span class="opt__count">' + count + '</span></label>';
   }
-  $('[data-types]').innerHTML = TYPES.map(function (t) { return opt('type', t[0], t[1], 0); }).join('');
+  function buildFilters() {     var prevList = $('#more-brands'); var wasOpen = prevList && !prevList.hidden;     $('[data-types]').innerHTML = TYPES.map(function (x) { return opt('type', x[0], typeName(x[0]), 0); }).join('');
   $('[data-brands]').innerHTML = BRAND_GROUPS.map(function (g) {
-    return '<p class="fgroup__sub">' + g[0] + '</p>' + g[1].map(function (b) { return opt('brand', b, b, 0); }).join('');
-  }).join('') + '<div class="more-list" id="more-brands" hidden><p class="fgroup__sub">Другие</p>' +
-    otherBrands.map(function (b) { return opt('brand', b, b, 0); }).join('') + '</div>' +
+    return '<p class="fgroup__sub">' + t(g[2], g[0]) + '</p>' + g[1].map(function (b) { return opt('brand', b, brandName(b), 0); }).join('');
+  }).join('') + '<div class="more-list" id="more-brands" hidden><p class="fgroup__sub">' + t('cat.bg.other', 'Другие') + '</p>' +
+    otherBrands.map(function (b) { return opt('brand', b, brandName(b), 0); }).join('') + '</div>' +
     '<button class="more-toggle" type="button" aria-expanded="false" aria-controls="more-brands"><span>Ещё ' + otherBrands.length + ' ' + plural(otherBrands.length, 'марка', 'марки', 'марок') + '</span>' + ICON.chevron + '</button>';
 
   var moreBtn = $('.more-toggle'), moreList = $('#more-brands');
   moreBtn.addEventListener('click', function () {
     var open = moreList.hidden; moreList.hidden = !open; moreBtn.setAttribute('aria-expanded', open);
-    moreBtn.firstChild.textContent = open ? 'Свернуть' : 'Ещё ' + otherBrands.length + ' ' + plural(otherBrands.length, 'марка', 'марки', 'марок');
+    moreBtn.firstChild.textContent = open ? t('cat.collapse', 'Свернуть') : (isEn() ? ('More ' + otherBrands.length + ' brands') : ('Ещё ' + otherBrands.length + ' ' + plural(otherBrands.length, 'марка', 'марки', 'марок')));
   });
 
-  /* ---------- Отрисовка ---------- */
+  if (wasOpen) { moreList.hidden = false; moreBtn.setAttribute('aria-expanded', 'true'); moreBtn.firstChild.textContent = t('cat.collapse', 'Свернуть'); }   }   buildFilters();   /* ---------- Отрисовка ---------- */
   var grid = $('.grid'), more = $('.more'), empty = $('.empty'), chips = $('.chips');
   var countEl = $('.toolbar__count'), searchInput = root.querySelector('[data-search]') || document.querySelector('[data-search]');
   var clearBtn = document.querySelector('[data-search-clear]');
@@ -186,10 +190,10 @@
   function renderChips() {
     var h = [];
     if (state.q.trim()) h.push('<button class="chip" type="button" data-rm="q">«' + esc(state.q.trim()) + '»' + ICON.x + '</button>');
-    state.type.forEach(function (t) { h.push('<button class="chip" type="button" data-rm="type:' + t + '">' + TYPE_NAME[t] + ICON.x + '</button>'); });
-    state.brand.forEach(function (b) { h.push('<button class="chip" type="button" data-rm="brand:' + esc(b) + '">' + esc(b) + ICON.x + '</button>'); });
-    if (state.photo) h.push('<button class="chip" type="button" data-rm="photo">С фото' + ICON.x + '</button>');
-    if (h.length > 1) h.push('<button class="chip chip--reset" type="button" data-rm="all">Сбросить всё</button>');
+    state.type.forEach(function (t) { h.push('<button class="chip" type="button" data-rm="type:' + t + '">' + typeName(t) + ICON.x + '</button>'); });
+    state.brand.forEach(function (b) { h.push('<button class="chip" type="button" data-rm="brand:' + esc(b) + '">' + esc(brandName(b)) + ICON.x + '</button>'); });
+    if (state.photo) h.push('<button class="chip" type="button" data-rm="photo">' + t('cat.chip.photo', 'С фото') + ICON.x + '</button>');
+    if (h.length > 1) h.push('<button class="chip chip--reset" type="button" data-rm="all">' + t('cat.chip.resetAll', 'Сбросить всё') + '</button>');
     chips.innerHTML = h.join('');
     var n = state.type.length + state.brand.length + (state.photo ? 1 : 0);
     document.querySelectorAll('[data-filters-count]').forEach(function (b) { b.textContent = n || ''; });
@@ -200,19 +204,19 @@
     if (from) grid.insertAdjacentHTML('beforeend', html); else grid.innerHTML = html;
     var shown = Math.min(state.shown, list.length);
     more.hidden = shown >= list.length;
-    more.querySelector('.more__text').textContent = 'Показано ' + shown + ' из ' + list.length;
+    more.querySelector('.more__text').textContent = (isEn() ? ('Showing ' + shown + ' of ' + list.length) : ('Показано ' + shown + ' из ' + list.length));
     more.querySelector('.more__bar i').style.width = (list.length ? shown / list.length * 100 : 0) + '%';
   }
   function render(keepUrl) {
     list = sorted(filter());
     state.shown = PAGE;
-    countEl.innerHTML = list.length + ' <span>' + plural(list.length, 'позиция', 'позиции', 'позиций') + '</span>';
+    countEl.innerHTML = list.length + ' <span>' + (isEn() ? (list.length === 1 ? 'item' : 'items') : plural(list.length, 'позиция', 'позиции', 'позиций')) + '</span>';
     empty.hidden = !!list.length;
     grid.hidden = !list.length;
     renderCards(0);
     counts(); renderChips(); syncControls();
     var applyN = document.querySelector('[data-apply-count]');
-    if (applyN) applyN.textContent = 'Показать ' + list.length;
+    if (applyN) applyN.textContent = t('cat.show', 'Показать') + ' ' + list.length;
     if (!keepUrl) writeUrl();
   }
   function scrollToResults() {
@@ -278,7 +282,7 @@
       var code = c.dataset.copy;
       (navigator.clipboard ? navigator.clipboard.writeText(code) : Promise.reject()).then(function () {
         c.classList.add('is-copied'); setTimeout(function () { c.classList.remove('is-copied'); }, 1500);
-        say('Код ' + code + ' скопирован');
+        say((isEn() ? ('Code ' + code + ' copied') : ('Код ' + code + ' скопирован')));
       }, function () { say('Код: ' + code); });
       return;
     }
@@ -286,7 +290,7 @@
     if (a) {
       var it = items[+a.dataset.ask], ta = document.getElementById('f-task');
       if (ta) {
-        ta.value = 'Запрос по каталогу: ' + it.name + ', ' + it.brand + (it.model ? ' ' + it.model : '') + ', код ' + it.code + '.\nКоличество: ';
+        ta.value = (isEn() ? ('Catalogue request: ' + it.name + ', ' + brandName(it.brand) + (it.model ? ' ' + it.model : '') + ', code ' + it.code + '.\nQuantity: ') : ('Запрос по каталогу: ' + it.name + ', ' + it.brand + (it.model ? ' ' + it.model : '') + ', код ' + it.code + '.\nКоличество: '));
         var f = ta.closest('.field'); if (f) { f.classList.remove('is-filled'); void f.offsetWidth; f.classList.add('is-filled'); }
         setTimeout(function () { ta.focus({ preventScroll: true }); ta.setSelectionRange(ta.value.length, ta.value.length); }, 700);
       }
@@ -307,8 +311,8 @@
   scrim.addEventListener('click', function () { sheet(false); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && form.classList.contains('is-open')) sheet(false); });
 
-  addEventListener('hashchange', function () { if (PRESETS[location.hash.slice(1)]) { readUrl(); render(); } });
+  addEventListener('hashchange', function () { if (PRESETS[location.hash.slice(1)]) {   readUrl(); render(); } });
 
-  readUrl();
+  window.addEventListener('sznp:lang', function () { buildFilters(); render(true); });   readUrl();
   render(true);
 })();
