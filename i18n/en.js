@@ -1,11 +1,8 @@
-/* EN — машинный перевод, ТРЕБУЕТ ВЫЧИТКИ. RU-тексты живут в разметке. */
+/* EN — перевод интерфейса и страниц. RU-тексты живут в разметке. */
+/* Откат: удалены 6 неиспользуемых ключей (top.email, top.jobs, top.faq, top.sites, demo.title, demo.note). */
 window.SZNP_I18N = window.SZNP_I18N || {};
 window.SZNP_I18N.en = {
   'skip': 'Skip to content',
-  'top.email': 'order@sznp.info',
-  'top.jobs': 'Careers',
-  'top.faq': 'FAQ',
-  'top.sites': 'Novosibirsk · Norilsk',
 
   'nav.home': 'Home',
   'nav.about': 'About us',
@@ -43,9 +40,43 @@ window.SZNP_I18N.en = {
   'legal.offer': 'Public offer',
   'legal.pd': 'Personal data policy',
 
-  'demo.title': 'The future belongs to manufacturing, the present belongs to quality',
-  'demo.note': 'Stage 3 preview: header, “About us” dropdown, footer',
+  // Главная (index.html)
+  'hero.1.title': 'The future belongs to manufacturing, the present belongs to quality',
+  'hero.1.sub': 'We select a replacement using our own system: quality on par with European manufacturers at a lower price than imports.',
+  'hero.1.btn': 'Find a repair kit',
+  'hero.2.title': 'Order an analogue of an imported spare part',
+  'hero.2.sub': 'We manufacture seals, high-pressure hoses, hydraulic cylinders and consumables for CAT, Sandvik, Epiroc and Normet machinery.',
+  'hero.2.btn': 'Send a request',
+  'hero.3.title': 'Send us a drawing or a sample of the part',
+  'hero.3.sub': 'We manufacture parts of any complexity on our own CNC equipment.',
+  'hero.3.btn': 'Send a drawing',
+  'hero.toSections': 'To site sections',
+  
+  'about.plate': 'About us',
+  'about.title': 'We manufacture components for industrial equipment',
+  'about.text': 'We make spare parts and consumables for mining machinery: to drawings, from samples, and as replacements for imported items.',
+  'about.btn': 'Learn more',
 
+  'products.plate': 'Products',
+  'products.title': 'Spare parts that keep your operations running',
+  'products.text': 'Main product groups. If the item you need is not listed, we will make it from a drawing or sample.',
+  'products.ask': 'Can’t find the part you need?',
+  'products.btn': 'Send a drawing',
+
+  'stats.1': 'spare parts and consumables',
+  'stats.2': 'equipment brands we make analogues for',
+  'stats.3.num': 'up to 40%',
+  'stats.3': 'less than imported originals',
+  'stats.4.num': 'from 5 days',
+  'stats.4': 'lead time for a standard part',
+
+  'links.title': 'Sections',
+  'links.1.title': 'Spare parts catalogue',
+  'links.1.sub': 'Items with part numbers and descriptions',
+  'links.2.title': 'In-house manufacturing',
+  'links.2.sub': 'Equipment and CNC machining',
+  'links.3.title': 'Cardan shafts',
+  'links.3.sub': 'Manufacturing / restoration of cardan shafts',
   // О компании
   'ab.hero.sub': 'A reliable manufacturing partner for the mining and industrial sectors: spare parts production, engineering solutions and integrated supply.',
   'ab.factory.title': 'High-precision manufacturing and reverse engineering since 2022',
