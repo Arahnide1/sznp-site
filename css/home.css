@@ -100,43 +100,38 @@
 /* Откат к прежнему фону: восстановить #make с радиальными/линейным градиентами,
    .make-card { background: #fff; border: 1px solid rgba(255,255,255,.92); }
    и прежние значения .make-card__photo / .make-card__body ниже. */
+/* Откат фона: предыдущий вариант с размытыми лентами доступен в истории Git. */
 #make {
   position: relative;
   isolation: isolate;
   overflow: hidden;
   color: var(--text);
-  background:
-    radial-gradient(ellipse at 72% 18%, rgba(255, 255, 255, .62) 0%, rgba(255, 255, 255, 0) 54%),
-    radial-gradient(ellipse at 18% 82%, rgba(174, 190, 208, .20) 0%, rgba(174, 190, 208, 0) 48%),
-    linear-gradient(145deg, #DCE5EF 0%, #E4EBF3 48%, #D8E2ED 100%);
+  background: linear-gradient(145deg, #D6E0EC 0%, #E4EAF2 55%, #D5DFEA 100%);
 }
 #make::before {
   content: "";
   position: absolute;
-  inset: -18%;
+  inset: 0;
   z-index: -1;
   pointer-events: none;
-  background:
-    linear-gradient(
-      135deg,
-      transparent 0%,
-      transparent 15.5%,
-      rgba(166, 183, 202, .34) 16.2%,
-      rgba(166, 183, 202, .34) 27.8%,
-      rgba(166, 183, 202, .18) 29%,
-      transparent 30%,
-      transparent 45.5%,
-      rgba(248, 250, 253, .48) 46.2%,
-      rgba(248, 250, 253, .48) 58.8%,
-      rgba(248, 250, 253, .18) 60%,
-      transparent 61%,
-      transparent 76.5%,
-      rgba(170, 187, 206, .28) 77.2%,
-      rgba(170, 187, 206, .28) 88.8%,
-      transparent 90%
-    );
-  filter: blur(7px);
-}
+  /* Чёткие края широких лент; мягкий тональный переход только внутри каждой. */
+  background: linear-gradient(
+    135deg,
+    rgba(158, 175, 195, .52) 0%,
+    rgba(174, 190, 207, .42) 13%,
+    rgba(230, 237, 245, .25) 13%,
+    rgba(240, 245, 250, .52) 28%,
+    rgba(160, 178, 198, .40) 28%,
+    rgba(173, 190, 208, .30) 42%,
+    rgba(237, 242, 248, .50) 42%,
+    rgba(248, 250, 253, .66) 59%,
+    rgba(167, 184, 204, .38) 59%,
+    rgba(185, 200, 217, .30) 75%,
+    rgba(235, 241, 248, .48) 75%,
+    rgba(245, 248, 252, .60) 89%,
+    rgba(166, 184, 204, .34) 89%,
+    rgba(175, 191, 210, .34) 100%
+  );
 }
 .make-card {
   --make-card-bottom: #C5D0DF;
