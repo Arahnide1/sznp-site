@@ -13,7 +13,7 @@
 
   // Выпадающие пункты
   const items = header.querySelectorAll('.nav__item--drop');
-  const desktop = window.matchMedia('(min-width: 1024px) and (hover: hover)');
+  const desktop = window.matchMedia('(min-width: 1200px) and (hover: hover)');
 
   items.forEach((item) => {
     const toggle = item.querySelector('.nav__toggle');
@@ -50,7 +50,7 @@
       if (e.key === 'ArrowUp') { e.preventDefault(); links[(i - 1 + links.length) % links.length].focus(); }
     });
     item.addEventListener('focusout', (e) => {
-      if (!item.contains(e.relatedTarget)) closeSelf();
+      if (!header.classList.contains('menu-open') && !item.contains(e.relatedTarget)) closeSelf();
     });
 
     if (params.get('menu') === 'open') open();
@@ -76,9 +76,27 @@
 
   // Бургер
   const burger = header.querySelector('.burger');
+  const closeMenu = () => {
+    header.classList.remove('menu-open');
+    burger?.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    items.forEach(close);
+  };
   burger?.addEventListener('click', () => {
     const isOpen = header.classList.toggle('menu-open');
     burger.setAttribute('aria-expanded', String(isOpen));
     document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  header.querySelector('.nav')?.addEventListener('click', (e) => {
+    if (e.target.closest('a')) closeMenu();
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1200 && header.classList.contains('menu-open')) closeMenu();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && header.classList.contains('menu-open')) {
+      closeMenu();
+      burger?.focus();
+    }
   });
 })();

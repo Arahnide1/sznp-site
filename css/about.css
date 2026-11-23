@@ -134,11 +134,17 @@
 }
 @media (max-width: 1023px) {
   .page-hero { min-height: 520px; }
+  .page-hero > img { object-position: 65% center; }
+  .page-hero::after { background: linear-gradient(0deg, rgba(0, 14, 28, .92), rgba(0, 14, 28, .24) 80%), linear-gradient(90deg, rgba(0, 14, 28, .45), transparent); }
   .page-hero__in { padding-bottom: 64px; }
   .sites { grid-template-columns: 1fr; }
   .base__photo { min-height: 380px; }
 }
 @media (max-width: 639px) {
+  .page-hero { min-height: 500px; }
+  .page-hero__in { gap: 18px; padding-bottom: 40px; }
+  .page-hero__title { font-size: clamp(30px, 9vw, 40px); }
+  .page-hero__sub { font-size: 16px; }
   .a-stats, .values, .staff { grid-template-columns: 1fr; }
   .staff { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .a-stat, .value, .site-card, .jobs-cta { padding: 28px 24px; }

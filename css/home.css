@@ -425,18 +425,33 @@
 }
 @media (max-width: 1199px) {
   .make-grid { grid-template-columns: repeat(3, 1fr); }
-  .how-grid { grid-template-columns: repeat(4, 1fr); }
+  .how-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .products__grid, .prod-grid, .contacts-grid, .about-intro { grid-template-columns: 1fr; }
   .collage { min-height: clamp(440px, 58vw, 600px); }
   .brands { grid-template-columns: repeat(3, 1fr); }
+  .hero { min-height: 680px; height: 100svh; }
+  .hero__slide > img.hero__img--left { object-position: 65% center; transform-origin: 65% center; }
+  .hero__content { bottom: 170px; }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .make-grid, .links-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero__text { max-width: 650px; }
+  .hero__progress button { width: 32px; }
+  .prod-big { min-height: 520px; }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .how-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 639px) {
   .make-grid, .links-grid, .prod-cards, .form, .stats { grid-template-columns: 1fr; }
   .how-grid, .brands { grid-template-columns: repeat(2, 1fr); }
   .hero { height: 100svh; min-height: 650px; max-height: none; }
+  .hero__slide > img, .hero__slide > img.hero__img--left { height: 62%; object-position: 65% center; transform-origin: 65% center; }
+  .hero__slide::after { background: linear-gradient(180deg, rgba(0, 10, 20, .22) 0%, rgba(0, 14, 28, .1) 24%, #00101f 62%, #00101f 100%); }
   .hero__content { bottom: 132px; }
   .hero__text { gap: 18px; }
   .hero__title { font-size: clamp(30px, 9vw, 40px); }
+  .hero__text, .hero__title, .how-item { min-width: 0; overflow-wrap: anywhere; }
   .hero__sub { font-size: 16px; line-height: 1.45; }
   .hero__bar { bottom: 28px; }
   .hero__bar-in { gap: 8px; }
@@ -482,7 +497,7 @@
 .pin--main.pin--top .pin__label { top: -72px; }
 .is-static .hero__progress button.is-active i { transform: scaleX(1); }
 
-@media (max-width: 639px) {
+@media (max-width: 767px) {
   .geo__map { aspect-ratio: auto; display: flex; flex-wrap: wrap; gap: 8px; }
   .geo__map > img { width: 100%; height: auto; margin-bottom: 12px; }
   .pin { position: static; }
@@ -491,4 +506,7 @@
     position: static; display: block; transform: none; white-space: normal;
     font-size: 13px; padding: 8px 12px;
   }
+}
+@media (max-width: 360px) {
+  .hero__to-sections > span:not(.ic) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 }

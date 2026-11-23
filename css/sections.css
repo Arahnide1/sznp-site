@@ -50,4 +50,5 @@
 
 @media (max-width: 1023px) {
   .sec-head { grid-template-columns: 1fr; margin-bottom: 40px; }
+  .sec-head > * { min-width: 0; overflow-wrap: anywhere; }
 }

@@ -64,6 +64,9 @@
   .cat-teaser { grid-template-columns: 1fr; gap: 32px; justify-items: start; }
 }
 @media (max-width: 1023px) {
+  .page-hero--production > img { object-position: 65% center; }
+  .page-hero--cardan > img { object-position: 45% center; }
+  .page-hero--analogs > img { object-position: 50% center; }
   .split { grid-template-columns: 1fr; gap: 40px; }
   .split--rev .split__photo { order: 0; }
   .values--3, .steps--3 { grid-template-columns: 1fr; }
