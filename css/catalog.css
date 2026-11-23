@@ -339,6 +339,9 @@
   .select select { height: 44px; }
   .is-list .pc__img { width: 64px; }
   .is-list .pc__cta { margin-right: 8px; padding: 0 12px; }
+  .toolbar__side { width: 100%; flex-wrap: wrap; }
+  .cat-hero__stats { flex-wrap: wrap; gap: 16px 24px; }
+  .pc__name, .pc__code { overflow-wrap: anywhere; }
 }
 @media (prefers-reduced-motion: reduce) {
   .pc, .chip { animation: none !important; }
